@@ -1,0 +1,245 @@
+<html>
+
+<!--=======================================================================-->
+
+<head>
+    <script type='text/javascript' src='http://epilog.stanford.edu/javascript/epilog.js'></script>
+    <script type='text/javascript' src='http://worksheets.stanford.edu/javascript/worksheets.js'></script>
+    <script type='text/javascript' src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Helvetica Neue';
+      }
+      .header {
+        color: black;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+      }
+      .table-container {
+        display: flex;
+        align-items: center;
+        justify-content:center;
+      }
+      .table {
+        background-color: rgb(255, 255, 255);
+        border-width: 2px;
+        border-color: white;
+        padding: 2%;
+      }
+
+      /* .mon { background-color: #f9d7dd; } /* Pastel pink */
+      /* .tue { background-color: #ffecd1; } /* Pastel red */
+      /* .wed { background-color: #caf1f6; } /* Pastel blue */
+      /* .thu { background-color: #c6f1c6; } /* Pastel green */
+      /* .fri { background-color: #f6fb98; } /* Pastel wheat */
+      /* .sat { background-color: #d3d2ff; } /* Pastel navajo white */
+      /* .sun { background-color: #f6d9f6; } /* Pastel thistle */
+    </style>
+</head>
+
+<!--=======================================================================-->
+
+<body style="background-color: #FFFFFF" onload='initialize()'>
+  <center>
+
+<!--=======================================================================-->
+<div class="header">
+  <div style="font-size: 40px; padding-bottom: 0;">CS 151 Final Project</div>
+  <div style="font-size: 75px; font-weight: bold;">Weekly Habits ✍️</div>
+  <div style="font-size: 15px;">Habit Police: Aanika Kaur Atluri, Ally Nakamura, Sarah Raza, Roshan Swaroop</div>
+</br>
+  <div style="font-size: 15px;"><b>How it works: </b> Get feedback on how you did this week with meeting your daily habits! </br>
+    Check habits you complete as your week progresses. </div>
+</div>
+<!-- <div class="table-container">
+  <table style="margin-right: 3%;" cellspacing='0' border='1'>
+    <tr>
+      <th class="table">Base Ingredient  </th>
+      <th class="table">Amount (oz)</th>
+    </tr>
+    <td>
+      <select id='room(cs151)' style='width:80' onchange='handle(this)'>
+        <option value='unknown'></option>
+        <option>g100</option>
+        <option>g200</option>
+        <option>g300</option>
+      </select>
+    </td>
+  </table>
+</div>
+<div class="table-container"> -->
+
+  <table style="margin-right: 3%;" cellspacing='0' border='1'>
+    <tr>
+      <th class="table"></th>
+      <th class="table mon">MON</th>
+      <th class="table tue">TUE</th>
+      <th class="table wed">WED</th>
+      <th class="table thu">THU</th>
+      <th class="table fri">FRI</th>
+      <th class="table sat">SAT</th>
+      <th class="table sun">SUN</th>
+    </tr>
+    <tr>
+      <th class="table">Exercised 🏃 </th>
+      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+
+    </tr>
+    <tr>
+      <th class="table">Drank 64oz water 🚰</th>
+      <td class="table mon"><input id='drinking_water_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='drinking_water_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='drinking_water_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='drinking_water_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='drinking_water_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='drinking_water_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='drinking_water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+
+    <tr>
+      <th class="table">Flossed 🦷 </th>
+      <td class="table mon"><input id='flossing_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='flossing_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='flossing_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='flossing_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='flossing_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='flossing_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='flossing_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+
+    <tr>
+      <th class="table">Went to class 📚 </th>
+      <td class="table mon"><input id='went_to_class_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='went_to_class_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='went_to_class_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='went_to_class_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='went_to_class_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='went_to_class_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='went_to_class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+
+    <tr>
+      <th class="table">Skincare routine 🪞 </th>
+      <td class="table mon"><input id='skincare_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='skincare_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='skincare_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='skincare_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='skincare_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='skincare_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='skincare_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+
+    <tr>
+      <th class="table">Call loved ones 💟 </th>
+      <td class="table mon"><input id='call_loved_ones_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='call_loved_ones_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='call_loved_ones_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='call_loved_ones_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='call_loved_ones_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='call_loved_ones_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='call_loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+
+    <tr>
+      <th class="table">Study 📗 </th>
+      <td class="table mon"><input id='study_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='study_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='study_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='study_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='study_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='study_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='study_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+    <tr>
+      <th class="table">Read 📕 </th>
+      <td class="table mon"><input id='read_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='read_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='read_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='read_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='read_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='read_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='read_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+    <tr>
+      <th class="table">Practiced language 🌐 </th>
+      <td class="table mon"><input id='practiced_language_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='practiced_language_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='practiced_language_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='practiced_language_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='practiced_language_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='practiced_language_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='practiced_language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+    </tr>
+
+
+    <!-- Continue with the remaining habits, making sure to provide a unique id for each checkbox -->
+  </table>
+
+
+</div>
+
+<div style="color: white">
+
+  RESULTS: <span id='results' style='font-size:18px;' onchange='handle(this)'> </span>
+
+</div>
+
+<br/>
+
+<!--=======================================================================-->
+
+<textarea id='lambda' type='text/hrf' style='display:none'>
+  ~role(swe)
+  ~role(hwe)
+  ~role(product)
+  ~role(design)
+  ~role(marketing)
+  ~role(sales)
+
+
+
+</textarea>
+
+<!--=======================================================================-->
+
+<textarea id='library' type='text/hrf' style='display:none'>
+
+init(swe_results())
+
+select(A, X) :: role(A) ==> ~role(A)
+select(A, X) :: ~role(A) ==> role(A)
+
+value(A, true) :- role(A)
+value(A, false) :- ~role(A)
+
+
+swe_results("software engineering job here") :- role(swe)
+swe_results("") :- ~role(swe)
+
+innerhtml(results,W) :- swe_results(W)
+
+</textarea>
+
+<!--=======================================================================-->
+
+  </center>
+</body>
+
+<!--=======================================================================-->
+
+</html>
