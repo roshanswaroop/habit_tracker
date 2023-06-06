@@ -109,7 +109,7 @@
       <td class="table sat"><input id='water_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='water_goal' style='width:100%' onchange='handle(this)'>
+        <select id='water_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -132,7 +132,7 @@
       <td class="table sat"><input id='flossing_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='flossing_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='floss_goal' style='width:100%' onchange='handle(this)'>
+        <select id='floss_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -155,7 +155,7 @@
       <td class="table sat"><input id='class_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='class_goal' style='width:100%' onchange='handle(this)'>
+        <select id='class_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -178,7 +178,7 @@
       <td class="table sat"><input id='skincare_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='skincare_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='skincare_goal' style='width:100%' onchange='handle(this)'>
+        <select id='skincare_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -201,7 +201,7 @@
       <td class="table sat"><input id='loved_ones_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='lovedones_goal' style='width:100%' onchange='handle(this)'>
+        <select id='lovedones_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -224,7 +224,7 @@
       <td class="table sat"><input id='study_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='study_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='study_goal' style='width:100%' onchange='handle(this)'>
+        <select id='study_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -246,7 +246,7 @@
       <td class="table sat"><input id='read_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='read_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='read_goal' style='width:100%' onchange='handle(this)'>
+        <select id='read_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -268,7 +268,7 @@
       <td class="table sat"><input id='language_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun"><input id='language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='language_goal' style='width:100%' onchange='handle(this)'>
+        <select id='language_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -460,6 +460,23 @@
         </td>
         <td valign="top">
           <canvas id="exercisegoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="watergoal_chart" style="max-width:300px"></canvas>
+        </td>
+    </tr>
+    <tr>
+        <td valign="top">
+          <canvas id="flossgoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="classgoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="skincaregoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="lovedonesgoal_chart" style="max-width:300px"></canvas>
         </td>
     </tr>
   </table>
@@ -1037,16 +1054,16 @@ innerhtml(sun_count, Total) :- suncount(Total)
   });
 
 
-genXValues = ["Days Exercised", "Days Left For Goal"];
+var xValuesExerciseGoal = ["Days Exercised", "Days Left For Goal"];
 var goalColors = ["green", "black"];
-var genYValues = [0, 0];
+var yValuesExerciseGoal = [0, 0];
 var exercisegoal_chart = new Chart("exercisegoal_chart", {
-  type: "pie",
+  type: "doughnut",
     data: {
-      labels: genXValues,
+      labels: xValuesExerciseGoal,
       datasets: [{
         backgroundColor: goalColors,
-        data: genYValues
+        data: yValuesExerciseGoal
       }]
     },
   options: {
@@ -1056,14 +1073,142 @@ var exercisegoal_chart = new Chart("exercisegoal_chart", {
           display: true,
           text: 'Days Exercised',
           font: {
-            size: 13
+            size: 15
         }
     }
   }
   }
 });
 
+var xValuesWaterGoal = ["Days Water Drank", "Days Left For Goal"];
+var goalColors = ["blue", "black"];
+var yValuesWaterGoal = [0, 0];
+var watergoal_chart = new Chart("watergoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesWaterGoal,
+      datasets: [{
+        backgroundColor: goalColors,
+        data: yValuesWaterGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days Water Drank',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
 
+var xValuesFlossGoal = ["Days Flossed", "Days Left For Goal"];
+var flossGoalColors = ["brown", "black"];
+var yValuesFlossGoal = [0, 0];
+var flossgoal_chart = new Chart("flossgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesFlossGoal,
+      datasets: [{
+        backgroundColor: flossGoalColors,
+        data: yValuesFlossGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days Flossed',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesClassGoal = ["Days Class Attended", "Days Left For Goal"];
+var classGoalColors = ["purple", "black"];
+var yValuesClassGoal = [0, 0];
+var classgoal_chart = new Chart("classgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesClassGoal,
+      datasets: [{
+        backgroundColor: classGoalColors,
+        data: yValuesClassGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days Class Attended',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesSkinCareGoal = ["Days of Skin Care", "Days Left For Goal"];
+var skinCareGoalColors = ["red", "black"];
+var yValuesskinCareGoal = [0, 0];
+var skincaregoal_chart = new Chart("skincaregoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesSkinCareGoal,
+      datasets: [{
+        backgroundColor: skinCareGoalColors,
+        data: yValuesskinCareGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Skin Care',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesLovedOnesGoal = ["Days of Calling Loved Ones", "Days Left For Goal"];
+var lovedOneGoalColors = ["pink", "black"];
+var yValueslovedOneGoal = [0, 0];
+var lovedonesgoal_chart = new Chart("lovedonesgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesLovedOnesGoal,
+      datasets: [{
+        backgroundColor: lovedOneGoalColors,
+        data: yValueslovedOneGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Calling Loved Ones',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
 
 function updatechartActivities(){
     /* chart activites updating */
@@ -1110,10 +1255,87 @@ function updateExerciseGoals(){
   exercisegoal_chart.update();
 }
 
+function updateWaterGoals(){
+  watergoal_chart.data.datasets[0].data = []
+  watergoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('water_count').innerText));
+  if (parseInt(document.getElementById("water_goal").value) == 0){
+    watergoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("water_goal").value));
+  } else if ((parseInt(document.getElementById("water_goal").value) < (parseInt(document.getElementById('water_count').innerText)))) {
+    watergoal_chart.data.datasets[0].data.push(0);
+  } else {
+    watergoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("water_goal").value) - (parseInt(document.getElementById('water_count').innerText))));
+  }
+  watergoal_chart.update();
+}
+
+function updateFlossGoals(){
+  flossgoal_chart.data.datasets[0].data = []
+  flossgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('floss_count').innerText));
+
+  if (parseInt(document.getElementById("floss_goal").value) == 0){
+    flossgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("floss_goal").value));
+  } else if ((parseInt(document.getElementById("floss_goal").value) < (parseInt(document.getElementById('floss_count').innerText)))) {
+    flossgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    flossgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("floss_goal").value) - (parseInt(document.getElementById('floss_count').innerText))));
+  }
+
+  flossgoal_chart.update();
+}
+
+function updateClassGoals(){
+  classgoal_chart.data.datasets[0].data = []
+  classgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('class_count').innerText));
+
+  if (parseInt(document.getElementById("class_goal").value) == 0){
+    classgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("class_goal").value));
+  } else if ((parseInt(document.getElementById("class_goal").value) < (parseInt(document.getElementById('class_count').innerText)))) {
+    classgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    classgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("class_goal").value) - (parseInt(document.getElementById('class_count').innerText))));
+  }
+
+  classgoal_chart.update();
+}
+
+function updateSkinCareGoals(){
+  skincaregoal_chart.data.datasets[0].data = []
+  skincaregoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('skincare_count').innerText));
+
+  if (parseInt(document.getElementById("skincare_goal").value) == 0){
+    skincaregoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("skincare_goal").value));
+  } else if ((parseInt(document.getElementById("skincare_goal").value) < (parseInt(document.getElementById('skincare_count').innerText)))) {
+    skincaregoal_chart.data.datasets[0].data.push(0);
+  } else {
+    skincaregoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("skincare_goal").value) - (parseInt(document.getElementById('skincare_count').innerText))));
+  }
+  skincaregoal_chart.update();
+}
+
+function updateLovedOnesGoals(){
+  lovedonesgoal_chart.data.datasets[0].data = []
+  lovedonesgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('lovedones_count').innerText));
+
+  if (parseInt(document.getElementById("lovedones_goal").value) == 0){
+    lovedonesgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("lovedones_goal").value));
+  } else if ((parseInt(document.getElementById("lovedones_goal").value) < (parseInt(document.getElementById('lovedones_count').innerText)))) {
+    lovedonesgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    lovedonesgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("lovedones_goal").value) - (parseInt(document.getElementById('lovedones_count').innerText))));
+  }
+  lovedonesgoal_chart.update();
+}
+
+
 function updatecharts() {
   updatechartActivities();
   updatechartDays();
   updateExerciseGoals();
+  updateWaterGoals();
+  updateFlossGoals();
+  updateClassGoals();
+  updateSkinCareGoals();
+  updateLovedOnesGoals();
 }
 
 </script>
