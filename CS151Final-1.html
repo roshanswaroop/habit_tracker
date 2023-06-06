@@ -84,15 +84,15 @@
     </tr>
     <tr>
       <th class="table">Exercised 🏃 </th>
-      <td class="table mon" id="mon_exercising"><input id='exercising_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_exercising"><input id='exercising_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_exercising"><input id='exercising_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_exercising"><input id='exercising_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_exercising"><input id='exercising_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_exercising"><input id='exercising_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_exercising"><input id='exercising_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_exercising"><input id='exercising_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_exercising"><input id='exercising_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_exercising"><input id='exercising_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_exercising"><input id='exercising_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_exercising"><input id='exercising_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_exercising"><input id='exercising_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_exercising"><input id='exercising_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
       <td>
-        <select id='exercise_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='exercise_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -106,16 +106,16 @@
     </tr>
     <tr>
       <th class="table">Drank enough water 🚰</th>
-      <td class="table mon" id="mon_water"><input id='water_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_water"><input id='water_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_water"><input id='water_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_water"><input id='water_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_water"><input id='water_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_water"><input id='water_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_water"><input id='water_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_water"><input id='water_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_water"><input id='water_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_water"><input id='water_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_water"><input id='water_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_water"><input id='water_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_water"><input id='water_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_water"><input id='water_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
 
       <td>
-        <select id='water_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='water_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -130,16 +130,16 @@
 
     <tr>
       <th class="table">Flossed 🦷 </th>
-      <td class="table mon" id="mon_flossing"><input id='flossing_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_flossing"><input id='flossing_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_flossing"><input id='flossing_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_flossing"><input id='flossing_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_flossing"><input id='flossing_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_flossing"><input id='flossing_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_flossing"><input id='flossing_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_flossing"><input id='flossing_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_flossing"><input id='flossing_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_flossing"><input id='flossing_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_flossing"><input id='flossing_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_flossing"><input id='flossing_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_flossing"><input id='flossing_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_flossing"><input id='flossing_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
 
       <td>
-        <select id='floss_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='floss_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -154,16 +154,16 @@
 
     <tr>
       <th class="table">Went to class 📚 </th>
-      <td class="table mon" id="mon_class"><input id='class_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_class"><input id='class_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_class"><input id='class_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_class"><input id='class_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_class"><input id='class_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_class"><input id='class_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_class"><input id='class_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_class"><input id='class_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_class"><input id='class_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_class"><input id='class_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_class"><input id='class_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_class"><input id='class_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_class"><input id='class_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_class"><input id='class_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
 
       <td>
-        <select id='class_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='class_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -178,16 +178,16 @@
 
     <tr>
       <th class="table">Skincare routine 🪞 </th>
-      <td class="table mon" id="mon_skincare"><input id='skincare_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_skincare"><input id='skincare_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_skincare"><input id='skincare_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_skincare"><input id='skincare_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_skincare"><input id='skincare_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_skincare"><input id='skincare_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_skincare"><input id='skincare_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_skincare"><input id='skincare_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_skincare"><input id='skincare_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_skincare"><input id='skincare_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_skincare"><input id='skincare_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_skincare"><input id='skincare_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_skincare"><input id='skincare_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_skincare"><input id='skincare_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
 
       <td>
-        <select id='skincare_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='skincare_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -202,16 +202,16 @@
 
     <tr>
       <th class="table">Call loved ones 💟 </th>
-      <td class="table mon" id="mon_loved_ones"><input id='loved_ones_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_loved_ones"><input id='loved_ones_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_loved_ones"><input id='loved_ones_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_loved_ones"><input id='loved_ones_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_loved_ones"><input id='loved_ones_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_loved_ones"><input id='loved_ones_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_loved_ones"><input id='loved_ones_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_loved_ones"><input id='loved_ones_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_loved_ones"><input id='loved_ones_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_loved_ones"><input id='loved_ones_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_loved_ones"><input id='loved_ones_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_loved_ones"><input id='loved_ones_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_loved_ones"><input id='loved_ones_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_loved_ones"><input id='loved_ones_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
 
       <td>
-        <select id='lovedones_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='lovedones_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -226,15 +226,15 @@
 
     <tr>
       <th class="table">Study 📗 </th>
-      <td class="table mon" id="mon_study"><input id='study_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_study"><input id='study_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_study"><input id='study_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_study"><input id='study_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_study"><input id='study_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_study"><input id='study_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_study"><input id='study_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_study"><input id='study_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_study"><input id='study_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_study"><input id='study_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_study"><input id='study_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_study"><input id='study_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_study"><input id='study_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_study"><input id='study_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
       <td>
-        <select id='study_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='study_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -248,16 +248,16 @@
     </tr>
     <tr>
       <th class="table">Read 📕 </th>
-      <td class="table mon" id="mon_read"><input id='read_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_read"><input id='read_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_read"><input id='read_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_read"><input id='read_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_read"><input id='read_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_read"><input id='read_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_read"><input id='read_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_read"><input id='read_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_read"><input id='read_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_read"><input id='read_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_read"><input id='read_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_read"><input id='read_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_read"><input id='read_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_read"><input id='read_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
 
       <td>
-        <select id='read_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='read_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -271,16 +271,16 @@
     </tr>
     <tr>
       <th class="table">Practiced language 🌐 </th>
-      <td class="table mon" id="mon_language"><input id='language_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue" id="tue_language"><input id='language_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed" id="wed_language"><input id='language_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu" id="thu_language"><input id='language_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri" id="fri_language"><input id='language_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat" id="sat_language"><input id='language_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun" id="sun_language"><input id='language_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon" id="mon_language"><input id='language_mon' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table tue" id="tue_language"><input id='language_tue' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table wed" id="wed_language"><input id='language_wed' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table thu" id="thu_language"><input id='language_thu' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table fri" id="fri_language"><input id='language_fri' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sat" id="sat_language"><input id='language_sat' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
+      <td class="table sun" id="sun_language"><input id='language_sun' style='width:100;' onchange="handle(this); update_charts();" type="checkbox"></td>
 
       <td>
-        <select id='language_goal' style='width:100%' onchange="handle(this); updatecharts();">
+        <select id='language_goal' style='width:100%' onchange="handle(this); update_charts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -318,13 +318,13 @@
   <table>
     <tr>
       <td><b>Exercise 🏃 </b></td>
-      <td>Total # Days: <span id='exercise_count' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span></td>
+      <td>Total # Days: <span id='exercise_count' style='font-size:18px; color: green;' onchange="handle(this); update_charts();"> </span></td>
       <td style="padding-right: 15px;"><b>Drank enough water🚰  </b></td>
       <td>Total # Days: <span id='water_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
     </tr>
     <tr>
       <td></td>
-      <td style="padding-right: 15px;">Progress Towards Goal : <span id='exercise_progress' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span> %</td>
+      <td style="padding-right: 15px;">Progress Towards Goal : <span id='exercise_progress' style='font-size:18px; color: green;' onchange="handle(this); update_charts();"> </span> %</td>
       <td></td>
       <td style="padding-right: 15px;">Progress Towards Goal : <span id='water_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
     </tr>
@@ -379,39 +379,39 @@
   <table style="color:grey">
     <tr>
       <td><b>Mon. Score: </b></td>
-      <td><b><span id='mon_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='mon_count' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td><b>Tues. Score: </b></td>
-      <td><b><span id='tue_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='tue_count' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td><b>Wed. Score: </b></td>
-      <td><b><span id='wed_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='wed_count' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td style="padding-right: 10px;"><b>Thurs. Score: </b></td>
-      <td><b><span id='thu_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='thu_count' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td><b>Fri. Score: </b></td>
-      <td><b><span id='fri_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='fri_count' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td><b>Sat. Score: </b></td>
-      <td><b><span id='sat_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='sat_count' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td><b>Sun. Score: </b></td>
-      <td><b><span id='sun_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='sun_count' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td style="color: palevioletred"><b>Most Active Day: </b></td>
-      <td><b><span id='most_active' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='most_active' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
     <tr>
       <td style="color: palevioletred"><b>Favorite Activity: </b></td>
-      <td><b><span id='fav_activity' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+      <td><b><span id='fav_activity' style='font-size:18px; color: coral;' onchange="handle(this); update_charts();"> </span> </br></b></td>
     </tr>
   </table>
 </div>
@@ -1316,8 +1316,8 @@ innerhtml(fav_activity, "Practiced language 🌐	") :- exercisecount(A) &  water
      scales: {
          y: {
           beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 7
+          min: 0,
+          max: 7
          }
      }
   }
@@ -1340,8 +1340,8 @@ innerhtml(fav_activity, "Practiced language 🌐	") :- exercisecount(A) &  water
      scales: {
          y: {
           beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 9
+          min: 0,
+          max: 9
          }
      }
   }
@@ -1585,10 +1585,7 @@ var languagegoal_chart = new Chart("languagegoal_chart", {
 
 function updatechartActivities(){
     /* chart activites updating */
-  // TODO: create total activity variable
-  console.log(document.getElementById('exercise_count').innerText);
   chartactivities.data.datasets[0].data = [];
-  // TODO: create all counts other than exercise_count
   chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('exercise_count').innerText));
   chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('water_count').innerText));
   chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('floss_count').innerText));
@@ -1602,7 +1599,6 @@ function updatechartActivities(){
 }
 
 function updatechartDays(){
-  //console.log(document.getElementById('mon_count').innerText);
   chartdays.data.datasets[0].data = [];
   chartdays.data.datasets[0].data.push(parseInt(document.getElementById('mon_count').innerText));
   chartdays.data.datasets[0].data.push(parseInt(document.getElementById('tue_count').innerText));
@@ -1742,7 +1738,7 @@ function updateLanguageGoals(){
 }
 
 
-function updatecharts() {
+function update_charts() {
   updatechartActivities();
   updatechartDays();
   updateExerciseGoals();
