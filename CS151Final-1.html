@@ -1139,6 +1139,8 @@ running("Not quite there with exercise this week. Keep going 💪") :- ~reached_
 innerhtml(exercise_goal_reached,W) :- running(W)
 style(exercise_goal_reached, color, green) :- reached_exercise_goal
 style(exercise_goal_reached, color, blue) :- ~reached_exercise_goal
+style(exercise_goal_reached, display, none) :- ~exercisegoal(Goal)
+style(exercise_goal_reached, display, block) :- exercisegoal(Goal)
 
 watercount(Total) :- evaluate(countofall(X, task(X, water)), Total)
 innerhtml(water_count, Total) :- watercount(Total)
@@ -1151,6 +1153,8 @@ water("Keep hydrating! You're getting closer to your water goal 🚰") :- ~reach
 innerhtml(water_goal_reached, W) :- water(W)
 style(water_goal_reached, color, green) :- reached_water_goal
 style(water_goal_reached, color, blue) :- ~reached_water_goal
+style(water_goal_reached, display, none) :- ~watergoal(Goal)
+style(water_goal_reached, display, block) :- watergoal(Goal)
 
 flosscount(Total) :- evaluate(countofall(X, task(X, floss)), Total)
 innerhtml(floss_count, Total) :- flosscount(Total)
@@ -1163,6 +1167,8 @@ floss("Tidy up those gums! Achieve your flossing goal 🌟") :- ~reached_floss_g
 innerhtml(floss_goal_reached, W) :- floss(W)
 style(floss_goal_reached, color, green) :- reached_floss_goal
 style(floss_goal_reached, color, blue) :- ~reached_floss_goal
+style(floss_goal_reached, display, none) :- ~flossgoal(Goal)
+style(floss_goal_reached, display, block) :- flossgoal(Goal)
 
 classcount(Total) :- evaluate(countofall(X, task(X, class)), Total)
 innerhtml(class_count, Total) :- classcount(Total)
@@ -1175,6 +1181,8 @@ class("Keep showing up! Almost at your class goal 📚") :- ~reached_class_goal
 innerhtml(class_goal_reached, W) :- class(W)
 style(class_goal_reached, color, green) :- reached_class_goal
 style(class_goal_reached, color, blue) :- ~reached_class_goal
+style(class_goal_reached, display, none) :- ~classgoal(Goal)
+style(class_goal_reached, display, block) :- classgoal(Goal)
 
 skincarecount(Total) :- evaluate(countofall(X, task(X, skincare)), Total)
 innerhtml(skincare_count, Total) :- skincarecount(Total)
@@ -1187,6 +1195,8 @@ skincare("Keep going! Almost at your skincare goal 🌞") :- ~reached_skincare_g
 innerhtml(skincare_goal_reached, W) :- skincare(W)
 style(skincare_goal_reached, color, green) :- reached_skincare_goal
 style(skincare_goal_reached, color, blue) :- ~reached_skincare_goal
+style(skincare_goal_reached, display, none) :- ~skincaregoal(Goal)
+style(skincare_goal_reached, display, block) :- skincaregoal(Goal)
 
 lovedonescount(Total) :- evaluate(countofall(X, task(X, lovedones)), Total)
 innerhtml(lovedones_count, Total) :- lovedonescount(Total)
@@ -1199,6 +1209,8 @@ lovedones("Keep reaching out! Almost at your loved ones goal 💌") :- ~reached_
 innerhtml(lovedones_goal_reached, W) :- lovedones(W)
 style(lovedones_goal_reached, color, green) :- reached_lovedones_goal
 style(lovedones_goal_reached, color, blue) :- ~reached_lovedones_goal
+style(lovedones_goal_reached, display, none) :- ~lovedonesgoal(Goal)
+style(lovedones_goal_reached, display, block) :- lovedonesgoal(Goal)
 
 studycount(Total) :- evaluate(countofall(X, task(X, study)), Total)
 innerhtml(study_count, Total) :- studycount(Total)
@@ -1211,6 +1223,8 @@ study("Keep studying! Almost at your study goal 📘") :- ~reached_study_goal
 innerhtml(study_goal_reached, W) :- study(W)
 style(study_goal_reached, color, green) :- reached_study_goal
 style(study_goal_reached, color, blue) :- ~reached_study_goal
+style(study_goal_reached, display, none) :- ~studygoal(Goal)
+style(study_goal_reached, display, block) :- studygoal(Goal)
 
 readcount(Total) :- evaluate(countofall(X, task(X, read)), Total)
 innerhtml(read_count, Total) :- readcount(Total)
@@ -1223,6 +1237,8 @@ read("Keep reading! Almost at your reading goal 📚") :- ~reached_read_goal
 innerhtml(read_goal_reached, W) :- read(W)
 style(read_goal_reached, color, green) :- reached_read_goal
 style(read_goal_reached, color, blue) :- ~reached_read_goal
+style(read_goal_reached, display, none) :- ~readgoal(Goal)
+style(read_goal_reached, display, block) :- readgoal(Goal)
 
 languagecount(Total) :- evaluate(countofall(X, task(X, language)), Total)
 innerhtml(language_count, Total) :- languagecount(Total)
@@ -1233,8 +1249,10 @@ reached_language_goal :- languagecount(Total) & languagegoal(Goal) & leq(Goal, T
 language("🌍 Awesome! You're learning languages! 🎉") :- reached_language_goal
 language("Keep learning! Almost at your language goal 🌐") :- ~reached_language_goal
 innerhtml(language_goal_reached, W) :- language(W)
-style(language_goal_reached, color, green) :- reached_language_goal
-style(language_goal_reached, color, blue) :- ~reached_language_goal
+style(language_goal_reached, color, green) :- reached_language_goal & languagegoal(Goal)
+style(language_goal_reached, color, blue) :- ~reached_language_goal & languagegoal(Goal)
+style(language_goal_reached, display, none) :- ~languagegoal(Goal)
+style(language_goal_reached, display, block) :- languagegoal(Goal)
 
 moncount(Total) :- evaluate(countofall(X, task(mon, X)), Total)
 innerhtml(mon_count, Total) :- moncount(Total)
