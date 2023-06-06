@@ -220,13 +220,13 @@
   PROGRESS: <span id='language_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
 </div>
 <div style="color: black">
-  Monday Activity Count: <span id='mon_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Tuesday Activity Count: <span id='tue_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Wednesday Activity Count: <span id='wed_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Thursday Activity Count: <span id='thu_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Friday Activity Count: <span id='fri_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Saturday Activity Count: <span id='sat_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Sunday Activity Count: <span id='sun_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+  Monday Activity Count: <span id='mon_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
+  Tuesday Activity Count: <span id='tue_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
+  Wednesday Activity Count: <span id='wed_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
+  Thursday Activity Count: <span id='thu_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
+  Friday Activity Count: <span id='fri_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
+  Saturday Activity Count: <span id='sat_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
+  Sunday Activity Count: <span id='sun_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
 </div>
 
 <table style="margin-right: 3%;" cellspacing='0' border='1'>
@@ -242,99 +242,99 @@
     </tr>
     <tr>
       <th class="table">Exercised 🏃 </th>
-      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
 
     </tr>
     <tr>
       <th class="table">Drank 64oz water 🚰</th>
-      <td class="table mon"><input id='water_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='water_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='water_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='water_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='water_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='water_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='water_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='water_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='water_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='water_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='water_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='water_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='water_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
 
     <tr>
       <th class="table">Flossed 🦷 </th>
-      <td class="table mon"><input id='flossing_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='flossing_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='flossing_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='flossing_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='flossing_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='flossing_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='flossing_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='flossing_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='flossing_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='flossing_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='flossing_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='flossing_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='flossing_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='flossing_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
 
     <tr>
       <th class="table">Went to class 📚 </th>
-      <td class="table mon"><input id='class_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='class_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='class_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='class_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='class_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='class_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='class_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='class_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='class_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='class_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='class_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='class_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='class_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
 
     <tr>
       <th class="table">Skincare routine 🪞 </th>
-      <td class="table mon"><input id='skincare_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='skincare_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='skincare_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='skincare_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='skincare_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='skincare_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='skincare_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='skincare_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='skincare_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='skincare_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='skincare_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='skincare_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='skincare_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='skincare_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
 
     <tr>
       <th class="table">Call loved ones 💟 </th>
-      <td class="table mon"><input id='loved_ones_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='loved_ones_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='loved_ones_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='loved_ones_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='loved_ones_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='loved_ones_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='loved_ones_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='loved_ones_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='loved_ones_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='loved_ones_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='loved_ones_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='loved_ones_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='loved_ones_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
 
     <tr>
       <th class="table">Study 📗 </th>
-      <td class="table mon"><input id='study_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='study_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='study_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='study_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='study_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='study_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='study_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='study_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='study_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='study_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='study_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='study_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='study_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='study_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
     <tr>
       <th class="table">Read 📕 </th>
-      <td class="table mon"><input id='read_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='read_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='read_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='read_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='read_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='read_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='read_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='read_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='read_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='read_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='read_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='read_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='read_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='read_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
     <tr>
       <th class="table">Practiced language 🌐 </th>
-      <td class="table mon"><input id='language_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='language_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='language_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='language_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='language_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='language_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='language_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='language_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='language_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='language_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='language_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='language_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='language_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
     </tr>
 
 
@@ -929,26 +929,27 @@ function updatechartActivities(){
   chartactivities.data.datasets[0].data = [];
   // TODO: create all counts other than exercise_count
   chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('exercise_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('water_drank_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('flossed_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('went_to_class_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('call_loved_ones_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('study_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('practice_language_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('water_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('floss_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('class_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('skincare_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('lovedones_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('study_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('language_count').innerText));
   chartactivities.update();
 }
 
 function updatechartDays(){
   //console.log(document.getElementById('monday_count').innerText);
   chartdays.data.datasets[0].data = [];
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('monday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('tuesday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('wednesday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('thursday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('friday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('saturday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('sunday_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('mon_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('tue_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('wed_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('thu_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('fri_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('sat_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('sun_count').innerText));
   chartdays.update();
 }
 
