@@ -1027,48 +1027,16 @@ innerhtml(sun_count, Total) :- suncount(Total)
   }
   });
 
-  // var genXValues = ["black", "green"]
-  // var progressvals = ["days left", "days completed"]
-  // var exercisevals = [7, 38]
-//  var exercisegoal_chart = new Chart("exercisegoal_chart", {
-//   type: "pie",
-//     data: {
-//       labels: progressvals,
-//       datasets: [{
-//         backgroundColor: progresscolors,
-//         data: exercisevals
-//       }]
-//     },
-//   options: {
-//     maintainAspectRatio: false,
-//     plugins: {
-//         title: {
-//           display: true,
-//           text: 'Progress Towards Exercise Goal:',
-//           font: {
-//             size: 15
-//         }
-//     }
-//   }
-//   }
-// });
 
-
-var xValues = ["Fall", "Winter", "Spring"];
-var genXValues = ["Female", "Male"];
-var yValues = [0, 0, 0];
+genXValues = ["Days Exercised", "Days Left For Goal"];
+var goalColors = ["green", "black"];
 var genYValues = [0, 0];
-var bookColors = ["red", "red", "red"];
-var pageColors = ["green", "green", "green"];
-var diffColors = ["purple", "purple", "purple"];
-var genderColors = ["pink", "blue"];
 var exercisegoal_chart = new Chart("exercisegoal_chart", {
   type: "pie",
     data: {
       labels: genXValues,
       datasets: [{
-        label: 'Books by Gender',
-        backgroundColor: genderColors,
+        backgroundColor: goalColors,
         data: genYValues
       }]
     },
@@ -1077,7 +1045,7 @@ var exercisegoal_chart = new Chart("exercisegoal_chart", {
     plugins: {
         title: {
           display: true,
-          text: 'Books by Gender',
+          text: 'Days Exercised',
           font: {
             size: 13
         }
@@ -1120,21 +1088,23 @@ function updatechartDays(){
 }
 
 function updateExerciseGoals(){
- // console.log(document.getElementById('exercise_goal)').innerText)
-  //console.log(document.getElementById('exercise_goal)').innerText)
-
   exercisegoal_chart.data.datasets[0].data = []
   exercisegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('exercise_count').innerText));
-  exercisegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('water_count').innerText));
+
+  if (parseInt(document.getElementById("exercise_goal").value) == 0){
+    exercisegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("exercise_goal").value));
+  } else if ((parseInt(document.getElementById("exercise_goal").value) < (parseInt(document.getElementById('exercise_count').innerText)))) {
+    exercisegoal_chart.data.datasets[0].data.push(0);
+  } else {
+    exercisegoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("exercise_goal").value) - (parseInt(document.getElementById('exercise_count').innerText))));
+  }
   exercisegoal_chart.update();
 }
 
 function updatecharts() {
-  console.log("hello")
-
   updatechartActivities();
   updatechartDays();
-  updateExerciseGoals;
+  updateExerciseGoals();
 }
 
 </script>
