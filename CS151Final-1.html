@@ -479,6 +479,17 @@
           <canvas id="lovedonesgoal_chart" style="max-width:300px"></canvas>
         </td>
     </tr>
+    <tr>
+      <td valign="top">
+        <canvas id="studygoal_chart" style="max-width:300px"></canvas>
+      </td>
+      <td valign="top">
+        <canvas id="readgoal_chart" style="max-width:300px"></canvas>
+      </td>
+      <td valign="top">
+        <canvas id="languagegoal_chart" style="max-width:300px"></canvas>
+      </td>
+  </tr>
   </table>
 </div>
 
@@ -1210,6 +1221,85 @@ var lovedonesgoal_chart = new Chart("lovedonesgoal_chart", {
   }
 });
 
+var xValueStudyGoal = ["Days of Studying", "Days Left For Goal"];
+var studyGoalColors = ["green", "black"];
+var yValuesStudyGoal = [0, 0];
+var studygoal_chart = new Chart("studygoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValueStudyGoal,
+      datasets: [{
+        backgroundColor: studyGoalColors,
+        data: yValuesStudyGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Studying',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValueReadGoal = ["Days of Reading", "Days Left For Goal"];
+var readGoalColors = ["blue", "black"];
+var yValuesReadGoal = [0, 0];
+var readgoal_chart = new Chart("readgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValueReadGoal,
+      datasets: [{
+        backgroundColor: readGoalColors,
+        data: yValuesReadGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Reading',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+
+var xValueLanguageGoal = ["Days of Language", "Days Left For Goal"];
+var languageGoalColors = ["brown", "black"];
+var yValuesLanguageGoal = [0, 0];
+var languagegoal_chart = new Chart("languagegoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValueLanguageGoal,
+      datasets: [{
+        backgroundColor: languageGoalColors,
+        data: yValuesLanguageGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Language',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
 function updatechartActivities(){
     /* chart activites updating */
   // TODO: create total activity variable
@@ -1326,6 +1416,48 @@ function updateLovedOnesGoals(){
   lovedonesgoal_chart.update();
 }
 
+function updateStudyGoals(){
+  studygoal_chart.data.datasets[0].data = []
+  studygoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('study_count').innerText));
+
+  if (parseInt(document.getElementById("study_goal").value) == 0){
+    studygoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("study_goal").value));
+  } else if ((parseInt(document.getElementById("study_goal").value) < (parseInt(document.getElementById('study_count').innerText)))) {
+    studygoal_chart.data.datasets[0].data.push(0);
+  } else {
+    studygoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("study_goal").value) - (parseInt(document.getElementById('study_count').innerText))));
+  }
+  studygoal_chart.update();
+}
+
+function updateReadGoals(){
+  readgoal_chart.data.datasets[0].data = []
+  readgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
+
+  if (parseInt(document.getElementById("read_goal").value) == 0){
+    readgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("read_goal").value));
+  } else if ((parseInt(document.getElementById("read_goal").value) < (parseInt(document.getElementById('read_count').innerText)))) {
+    readgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    readgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("read_goal").value) - (parseInt(document.getElementById('read_count').innerText))));
+  }
+  readgoal_chart.update();
+}
+
+function updateLanguageGoals(){
+  languagegoal_chart.data.datasets[0].data = []
+  languagegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('language_count').innerText));
+
+  if (parseInt(document.getElementById("language_goal").value) == 0){
+    languagegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("language_goal").value));
+  } else if ((parseInt(document.getElementById("language_goal").value) < (parseInt(document.getElementById('language_count').innerText)))) {
+    languagegoal_chart.data.datasets[0].data.push(0);
+  } else {
+    languagegoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("language_goal").value) - (parseInt(document.getElementById('language_count').innerText))));
+  }
+  languagegoal_chart.update();
+}
+
 
 function updatecharts() {
   updatechartActivities();
@@ -1336,6 +1468,9 @@ function updatecharts() {
   updateClassGoals();
   updateSkinCareGoals();
   updateLovedOnesGoals();
+  updateStudyGoals();
+  updateReadGoals();
+  updateLanguageGoals();
 }
 
 </script>
