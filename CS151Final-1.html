@@ -31,9 +31,8 @@
       }
       .table {
         background-color: rgb(255, 255, 255);
-        border-width: 2px;
         border-color: white;
-        padding: 2%;
+        padding: 0%;
       }
 
       /* .mon { background-color: #f9d7dd; } /* Pastel pink */
@@ -57,16 +56,15 @@
   <div style="font-size: 75px; font-weight: bold;">Weekly Habits ✍️</div>
   <div style="font-size: 15px;">Habit Police: Aanika Kaur Atluri, Ally Nakamura, Sarah Raza, Roshan Swaroop</div>
 </br>
-  <div style="font-size: 15px;"><b>How it works: </b> Get feedback on how you did this week with meeting your daily habits! </br>
+  <div style="font-size: 15px;"><b>How it works: </b> Get feedback on how you did with meeting your daily habits! </br>
     Check habits you complete as your week progresses. </div>
 </div>
-<div>
+
 <div class="header">
   <div style="font-size: 15px; text-align: left; padding-left: 22%;"><b style="color: red">Step 1: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
 </div>
 <div>
-
-<table style="margin-right: 3%;" cellspacing='0' border='1'>
+  <table style="align-items: center;" cellspacing='0' border='1'>
     <tr>
       <th style="padding: 10px;"></th>
       <th style="padding: 10px;">Exercise</th>
@@ -191,16 +189,48 @@
     </td>
     </tr>
   </table>
-  
+</div>
+<!-- RESULTS SECTION! -->
 <div style="color: black">
+  NUMBER OF TIMES YOU EXERCISED: <span id='exercise_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='exercise_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+  
+  NUMBER OF TIMES YOU DRANK WATER: <span id='water_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='water_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
 
-  HERE ARE THE NUMBER OF TIMES YOU EXERCISED THIS WEEK: <span id='exercise_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS TOWARDS GOAL: <span id='exercise_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %
+  NUMBER OF TIMES YOU FLOSSED: <span id='floss_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='floss_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
 
+  NUMBER OF TIMES YOU WENT TO CLASS: <span id='class_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='class_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+
+  NUMBER OF TIMES YOU DID SKINCARE: <span id='skincare_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='skincare_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+
+  NUMBER OF TIMES YOU CALLED LOVED ONES: <span id='lovedones_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='lovedones_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+
+  NUMBER OF TIMES YOU STUDIED: <span id='study_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='study_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+
+  NUMBER OF TIMES YOU READ: <span id='read_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='read_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+
+  NUMBER OF TIMES YOU PRACTICED A LANGUAGE: <span id='language_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  PROGRESS: <span id='language_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+</div>
+<div style="color: black">
+  Monday Activity Count: <span id='mon_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+  Tuesday Activity Count: <span id='tue_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+  Wednesday Activity Count: <span id='wed_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+  Thursday Activity Count: <span id='thu_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+  Friday Activity Count: <span id='fri_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+  Saturday Activity Count: <span id='sat_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+  Sunday Activity Count: <span id='sun_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
 </div>
 
-  <table class="table" style="align-items: center;" cellspacing='0' border='1'>
-    <tr>
+<table style="margin-right: 3%;" cellspacing='0' border='1'>
+  <tr>
       <th class="table"></th>
       <th class="table mon">MON</th>
       <th class="table tue">TUE</th>
@@ -223,13 +253,13 @@
     </tr>
     <tr>
       <th class="table">Drank 64oz water 🚰</th>
-      <td class="table mon"><input id='drinking_water_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='drinking_water_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='drinking_water_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='drinking_water_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='drinking_water_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='drinking_water_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='drinking_water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='water_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='water_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='water_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='water_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='water_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='water_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
     </tr>
 
     <tr>
@@ -245,13 +275,13 @@
 
     <tr>
       <th class="table">Went to class 📚 </th>
-      <td class="table mon"><input id='went_to_class_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='went_to_class_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='went_to_class_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='went_to_class_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='went_to_class_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='went_to_class_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='went_to_class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='class_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='class_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='class_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='class_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='class_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='class_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
     </tr>
 
     <tr>
@@ -267,13 +297,13 @@
 
     <tr>
       <th class="table">Call loved ones 💟 </th>
-      <td class="table mon"><input id='call_loved_ones_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='call_loved_ones_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='call_loved_ones_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='call_loved_ones_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='call_loved_ones_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='call_loved_ones_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='call_loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='loved_ones_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='loved_ones_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='loved_ones_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='loved_ones_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='loved_ones_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='loved_ones_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
     </tr>
 
     <tr>
@@ -298,13 +328,13 @@
     </tr>
     <tr>
       <th class="table">Practiced language 🌐 </th>
-      <td class="table mon"><input id='practiced_language_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='practiced_language_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='practiced_language_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='practiced_language_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='practiced_language_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='practiced_language_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='practiced_language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='language_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='language_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='language_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='language_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='language_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='language_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
     </tr>
 
 
@@ -343,6 +373,63 @@
   task(fri, exercise);
   task(sat, exercise);
   task(sun, exercise);
+  task(mon, water);
+  task(tue, water);
+  task(wed, water);
+  task(thu, water);
+  task(fri, water);
+  task(sat, water);
+  task(sun, water);
+  task(mon, floss);
+  task(tue, floss);
+  task(wed, floss);
+  task(thu, floss);
+  task(fri, floss);
+  task(sat, floss);
+  task(sun, floss);
+  task(mon, classes);
+  task(tue, classes);
+  task(wed, classes);
+  task(thu, classes);
+  task(fri, classes);
+  task(sat, classes);
+  task(sun, classes);
+  task(mon, skincare);
+  task(tue, skincare);
+  task(wed, skincare);
+  task(thu, skincare);
+  task(fri, skincare);
+  task(sat, skincare);
+  task(sun, skincare);
+  task(mon, lovedones);
+  task(tue, lovedones);
+  task(wed, lovedones);
+  task(thu, lovedones);
+  task(fri, lovedones);
+  task(sat, lovedones);
+  task(sun, lovedones);
+  task(mon, study);
+  task(tue, study);
+  task(wed, study);
+  task(thu, study);
+  task(fri, study);
+  task(sat, study);
+  task(sun, study);
+  task(mon, read);
+  task(tue, read);
+  task(wed, read);
+  task(thu, read);
+  task(fri, read);
+  task(sat, read);
+  task(sun, read);
+  task(mon, language);
+  task(tue, language);
+  task(wed, language);
+  task(thu, language);
+  task(fri, language);
+  task(sat, language);
+  task(sun, language);
+
 </textarea>
 
 <!--=======================================================================-->
@@ -350,6 +437,21 @@
 <textarea id='library' type='text/hrf' style='display:none'>
 
 init(exercisecount(0))
+init(watercount(0))
+init(flosscount(0))
+init(classcount(0))
+init(skincarecount(0))
+init(lovedonescount(0))
+init(studycount(0))
+init(readcount(0))
+init(languagecount(0))
+init(moncount(0))
+init(tuecount(0))
+init(wedcount(0))
+init(thucount(0))
+init(fricount(0))
+init(satcount(0))
+init(suncount(0))
 
 select(exercising_mon, X) :: task(mon, exercise) ==> ~task(mon, exercise)
 select(exercising_mon, X) :: ~task(mon, exercise) ==> task(mon, exercise)
@@ -386,14 +488,433 @@ select(exercising_sun, X) :: ~task(sun, exercise) ==> task(sun, exercise)
 value(exercising_sun, true) :- task(sun, exercise)
 value(exercising_sun, false) :- ~task(sun, exercise)
 
+select(water_mon, X) :: task(mon, water) ==> ~task(mon, water)
+select(water_mon, X) :: ~task(mon, water) ==> task(mon, water)
+value(water_mon, true) :- task(mon, water)
+value(water_mon, false) :- ~task(mon, water)
+
+select(water_tue, X) :: task(tue, water) ==> ~task(tue, water)
+select(water_tue, X) :: ~task(tue, water) ==> task(tue, water)
+value(water_tue, true) :- task(tue, water)
+value(water_tue, false) :- ~task(tue, water)
+
+select(water_wed, X) :: task(wed, water) ==> ~task(wed, water)
+select(water_wed, X) :: ~task(wed, water) ==> task(wed, water)
+value(water_wed, true) :- task(wed, water)
+value(water_wed, false) :- ~task(wed, water)
+
+select(water_thu, X) :: task(thu, water) ==> ~task(thu, water)
+select(water_thu, X) :: ~task(thu, water) ==> task(thu, water)
+value(water_thu, true) :- task(thu, water)
+value(water_thu, false) :- ~task(thu, water)
+
+select(water_fri, X) :: task(fri, water) ==> ~task(fri, water)
+select(water_fri, X) :: ~task(fri, water) ==> task(fri, water)
+value(water_fri, true) :- task(fri, water)
+value(water_fri, false) :- ~task(fri, water)
+
+select(water_sat, X) :: task(sat, water) ==> ~task(sat, water)
+select(water_sat, X) :: ~task(sat, water) ==> task(sat, water)
+value(water_sat, true) :- task(sat, water)
+value(water_sat, false) :- ~task(sat, water)
+
+select(water_sun, X) :: task(sun, water) ==> ~task(sun, water)
+select(water_sun, X) :: ~task(sun, water) ==> task(sun, water)
+value(water_sun, true) :- task(sun, water)
+value(water_sun, false) :- ~task(sun, water)
+
+select(flossing_mon, X) :: task(mon, floss) ==> ~task(mon, floss)
+select(flossing_mon, X) :: ~task(mon, floss) ==> task(mon, floss)
+value(flossing_mon, true) :- task(mon, floss)
+value(flossing_mon, false) :- ~task(mon, floss)
+
+select(flossing_tue, X) :: task(tue, floss) ==> ~task(tue, floss)
+select(flossing_tue, X) :: ~task(tue, floss) ==> task(tue, floss)
+value(flossing_tue, true) :- task(tue, floss)
+value(flossing_tue, false) :- ~task(tue, floss)
+
+select(flossing_wed, X) :: task(wed, floss) ==> ~task(wed, floss)
+select(flossing_wed, X) :: ~task(wed, floss) ==> task(wed, floss)
+value(flossing_wed, true) :- task(wed, floss)
+value(flossing_wed, false) :- ~task(wed, floss)
+
+select(flossing_thu, X) :: task(thu, floss) ==> ~task(thu, floss)
+select(flossing_thu, X) :: ~task(thu, floss) ==> task(thu, floss)
+value(flossing_thu, true) :- task(thu, floss)
+value(flossing_thu, false) :- ~task(thu, floss)
+
+select(flossing_fri, X) :: task(fri, floss) ==> ~task(fri, floss)
+select(flossing_fri, X) :: ~task(fri, floss) ==> task(fri, floss)
+value(flossing_fri, true) :- task(fri, floss)
+value(flossing_fri, false) :- ~task(fri, floss)
+
+select(flossing_sat, X) :: task(sat, floss) ==> ~task(sat, floss)
+select(flossing_sat, X) :: ~task(sat, floss) ==> task(sat, floss)
+value(flossing_sat, true) :- task(sat, floss)
+value(flossing_sat, false) :- ~task(sat, floss)
+
+select(flossing_sun, X) :: task(sun, floss) ==> ~task(sun, floss)
+select(flossing_sun, X) :: ~task(sun, floss) ==> task(sun, floss)
+value(flossing_sun, true) :- task(sun, floss)
+value(flossing_sun, false) :- ~task(sun, floss)
+
+select(class_mon, X) :: task(mon, class) ==> ~task(mon, class)
+select(class_mon, X) :: ~task(mon, class) ==> task(mon, class)
+value(class_mon, true) :- task(mon, class)
+value(class_mon, false) :- ~task(mon, class)
+
+select(class_tue, X) :: task(tue, class) ==> ~task(tue, class)
+select(class_tue, X) :: ~task(tue, class) ==> task(tue, class)
+value(class_tue, true) :- task(tue, class)
+value(class_tue, false) :- ~task(tue, class)
+
+select(class_wed, X) :: task(wed, class) ==> ~task(wed, class)
+select(class_wed, X) :: ~task(wed, class) ==> task(wed, class)
+value(class_wed, true) :- task(wed, class)
+value(class_wed, false) :- ~task(wed, class)
+
+select(class_thu, X) :: task(thu, class) ==> ~task(thu, class)
+select(class_thu, X) :: ~task(thu, class) ==> task(thu, class)
+value(class_thu, true) :- task(thu, class)
+value(class_thu, false) :- ~task(thu, class)
+
+select(class_fri, X) :: task(fri, class) ==> ~task(fri, class)
+select(class_fri, X) :: ~task(fri, class) ==> task(fri, class)
+value(class_fri, true) :- task(fri, class)
+value(class_fri, false) :- ~task(fri, class)
+
+select(class_sat, X) :: task(sat, class) ==> ~task(sat, class)
+select(class_sat, X) :: ~task(sat, class) ==> task(sat, class)
+value(class_sat, true) :- task(sat, class)
+value(class_sat, false) :- ~task(sat, class)
+
+select(class_sun, X) :: task(sun, class) ==> ~task(sun, class)
+select(class_sun, X) :: ~task(sun, class) ==> task(sun, class)
+value(class_sun, true) :- task(sun, class)
+value(class_sun, false) :- ~task(sun, class)
+
+select(skincare_mon, X) :: task(mon, skincare) ==> ~task(mon, skincare)
+select(skincare_mon, X) :: ~task(mon, skincare) ==> task(mon, skincare)
+value(skincare_mon, true) :- task(mon, skincare)
+value(skincare_mon, false) :- ~task(mon, skincare)
+
+select(skincare_tue, X) :: task(tue, skincare) ==> ~task(tue, skincare)
+select(skincare_tue, X) :: ~task(tue, skincare) ==> task(tue, skincare)
+value(skincare_tue, true) :- task(tue, skincare)
+value(skincare_tue, false) :- ~task(tue, skincare)
+
+select(skincare_wed, X) :: task(wed, skincare) ==> ~task(wed, skincare)
+select(skincare_wed, X) :: ~task(wed, skincare) ==> task(wed, skincare)
+value(skincare_wed, true) :- task(wed, skincare)
+value(skincare_wed, false) :- ~task(wed, skincare)
+
+select(skincare_thu, X) :: task(thu, skincare) ==> ~task(thu, skincare)
+select(skincare_thu, X) :: ~task(thu, skincare) ==> task(thu, skincare)
+value(skincare_thu, true) :- task(thu, skincare)
+value(skincare_thu, false) :- ~task(thu, skincare)
+
+select(skincare_fri, X) :: task(fri, skincare) ==> ~task(fri, skincare)
+select(skincare_fri, X) :: ~task(fri, skincare) ==> task(fri, skincare)
+value(skincare_fri, true) :- task(fri, skincare)
+value(skincare_fri, false) :- ~task(fri, skincare)
+
+select(skincare_sat, X) :: task(sat, skincare) ==> ~task(sat, skincare)
+select(skincare_sat, X) :: ~task(sat, skincare) ==> task(sat, skincare)
+value(skincare_sat, true) :- task(sat, skincare)
+value(skincare_sat, false) :- ~task(sat, skincare)
+
+select(skincare_sun, X) :: task(sun, skincare) ==> ~task(sun, skincare)
+select(skincare_sun, X) :: ~task(sun, skincare) ==> task(sun, skincare)
+value(skincare_sun, true) :- task(sun, skincare)
+value(skincare_sun, false) :- ~task(sun, skincare)
+
+select(loved_ones_mon, X) :: task(mon, lovedones) ==> ~task(mon, lovedones)
+select(loved_ones_mon, X) :: ~task(mon, lovedones) ==> task(mon, lovedones)
+value(loved_ones_mon, true) :- task(mon, lovedones)
+value(loved_ones_mon, false) :- ~task(mon, lovedones)
+
+select(loved_ones_tue, X) :: task(tue, lovedones) ==> ~task(tue, lovedones)
+select(loved_ones_tue, X) :: ~task(tue, lovedones) ==> task(tue, lovedones)
+value(loved_ones_tue, true) :- task(tue, lovedones)
+value(loved_ones_tue, false) :- ~task(tue, lovedones)
+
+select(loved_ones_wed, X) :: task(wed, lovedones) ==> ~task(wed, lovedones)
+select(loved_ones_wed, X) :: ~task(wed, lovedones) ==> task(wed, lovedones)
+value(loved_ones_wed, true) :- task(wed, lovedones)
+value(loved_ones_wed, false) :- ~task(wed, lovedones)
+
+select(loved_ones_thu, X) :: task(thu, lovedones) ==> ~task(thu, lovedones)
+select(loved_ones_thu, X) :: ~task(thu, lovedones) ==> task(thu, lovedones)
+value(loved_ones_thu, true) :- task(thu, lovedones)
+value(loved_ones_thu, false) :- ~task(thu, lovedones)
+
+select(loved_ones_fri, X) :: task(fri, lovedones) ==> ~task(fri, lovedones)
+select(loved_ones_fri, X) :: ~task(fri, lovedones) ==> task(fri, lovedones)
+value(loved_ones_fri, true) :- task(fri, lovedones)
+value(loved_ones_fri, false) :- ~task(fri, lovedones)
+
+select(loved_ones_sat, X) :: task(sat, lovedones) ==> ~task(sat, lovedones)
+select(loved_ones_sat, X) :: ~task(sat, lovedones) ==> task(sat, lovedones)
+value(loved_ones_sat, true) :- task(sat, lovedones)
+value(loved_ones_sat, false) :- ~task(sat, lovedones)
+
+select(loved_ones_sun, X) :: task(sun, lovedones) ==> ~task(sun, lovedones)
+select(loved_ones_sun, X) :: ~task(sun, lovedones) ==> task(sun, lovedones)
+value(loved_ones_sun, true) :- task(sun, lovedones)
+value(loved_ones_sun, false) :- ~task(sun, lovedones)
+
+select(study_mon, X) :: task(mon, study) ==> ~task(mon, study)
+select(study_mon, X) :: ~task(mon, study) ==> task(mon, study)
+value(study_mon, true) :- task(mon, study)
+value(study_mon, false) :- ~task(mon, study)
+
+select(study_tue, X) :: task(tue, study) ==> ~task(tue, study)
+select(study_tue, X) :: ~task(tue, study) ==> task(tue, study)
+value(study_tue, true) :- task(tue, study)
+value(study_tue, false) :- ~task(tue, study)
+
+select(study_wed, X) :: task(wed, study) ==> ~task(wed, study)
+select(study_wed, X) :: ~task(wed, study) ==> task(wed, study)
+value(study_wed, true) :- task(wed, study)
+value(study_wed, false) :- ~task(wed, study)
+
+select(study_thu, X) :: task(thu, study) ==> ~task(thu, study)
+select(study_thu, X) :: ~task(thu, study) ==> task(thu, study)
+value(study_thu, true) :- task(thu, study)
+value(study_thu, false) :- ~task(thu, study)
+
+select(study_fri, X) :: task(fri, study) ==> ~task(fri, study)
+select(study_fri, X) :: ~task(fri, study) ==> task(fri, study)
+value(study_fri, true) :- task(fri, study)
+value(study_fri, false) :- ~task(fri, study)
+
+select(study_sat, X) :: task(sat, study) ==> ~task(sat, study)
+select(study_sat, X) :: ~task(sat, study) ==> task(sat, study)
+value(study_sat, true) :- task(sat, study)
+value(study_sat, false) :- ~task(sat, study)
+
+select(study_sun, X) :: task(sun, study) ==> ~task(sun, study)
+select(study_sun, X) :: ~task(sun, study) ==> task(sun, study)
+value(study_sun, true) :- task(sun, study)
+value(study_sun, false) :- ~task(sun, study)
+
+select(read_mon, X) :: task(mon, read) ==> ~task(mon, read)
+select(read_mon, X) :: ~task(mon, read) ==> task(mon, read)
+value(read_mon, true) :- task(mon, read)
+value(read_mon, false) :- ~task(mon, read)
+
+select(read_tue, X) :: task(tue, read) ==> ~task(tue, read)
+select(read_tue, X) :: ~task(tue, read) ==> task(tue, read)
+value(read_tue, true) :- task(tue, read)
+value(read_tue, false) :- ~task(tue, read)
+
+select(read_wed, X) :: task(wed, read) ==> ~task(wed, read)
+select(read_wed, X) :: ~task(wed, read) ==> task(wed, read)
+value(read_wed, true) :- task(wed, read)
+value(read_wed, false) :- ~task(wed, read)
+
+select(read_thu, X) :: task(thu, read) ==> ~task(thu, read)
+select(read_thu, X) :: ~task(thu, read) ==> task(thu, read)
+value(read_thu, true) :- task(thu, read)
+value(read_thu, false) :- ~task(thu, read)
+
+select(read_fri, X) :: task(fri, read) ==> ~task(fri, read)
+select(read_fri, X) :: ~task(fri, read) ==> task(fri, read)
+value(read_fri, true) :- task(fri, read)
+value(read_fri, false) :- ~task(fri, read)
+
+select(read_sat, X) :: task(sat, read) ==> ~task(sat, read)
+select(read_sat, X) :: ~task(sat, read) ==> task(sat, read)
+value(read_sat, true) :- task(sat, read)
+value(read_sat, false) :- ~task(sat, read)
+
+select(read_sun, X) :: task(sun, read) ==> ~task(sun, read)
+select(read_sun, X) :: ~task(sun, read) ==> task(sun, read)
+value(read_sun, true) :- task(sun, read)
+value(read_sun, false) :- ~task(sun, read)
+
+select(language_mon, X) :: task(mon, language) ==> ~task(mon, language)
+select(language_mon, X) :: ~task(mon, language) ==> task(mon, language)
+value(language_mon, true) :- task(mon, language)
+value(language_mon, false) :- ~task(mon, language)
+
+select(language_tue, X) :: task(tue, language) ==> ~task(tue, language)
+select(language_tue, X) :: ~task(tue, language) ==> task(tue, language)
+value(language_tue, true) :- task(tue, language)
+value(language_tue, false) :- ~task(tue, language)
+
+select(language_wed, X) :: task(wed, language) ==> ~task(wed, language)
+select(language_wed, X) :: ~task(wed, language) ==> task(wed, language)
+value(language_wed, true) :- task(wed, language)
+value(language_wed, false) :- ~task(wed, language)
+
+select(language_thu, X) :: task(thu, language) ==> ~task(thu, language)
+select(language_thu, X) :: ~task(thu, language) ==> task(thu, language)
+value(language_thu, true) :- task(thu, language)
+value(language_thu, false) :- ~task(thu, language)
+
+select(language_fri, X) :: task(fri, language) ==> ~task(fri, language)
+select(language_fri, X) :: ~task(fri, language) ==> task(fri, language)
+value(language_fri, true) :- task(fri, language)
+value(language_fri, false) :- ~task(fri, language)
+
+select(language_sat, X) :: task(sat, language) ==> ~task(sat, language)
+select(language_sat, X) :: ~task(sat, language) ==> task(sat, language)
+value(language_sat, true) :- task(sat, language)
+value(language_sat, false) :- ~task(sat, language)
+
+select(language_sun, X) :: task(sun, language) ==> ~task(sun, language)
+select(language_sun, X) :: ~task(sun, language) ==> task(sun, language)
+value(language_sun, true) :- task(sun, language)
+value(language_sun, false) :- ~task(sun, language)
+
 select(exercise_goal, Goal) :: exercisegoal(Goal)
 select(exercise_goal, Goal) :: exercisegoal(Old) ==> exercisegoal(Goal) & ~exercisegoal(Old)
 value(exercise_goal, Goal) :- exercisegoal(Goal)
 value(exercise_goal, 0) :- ~exercisegoal(Goal)
 
+select(water_goal, Goal) :: watergoal(Goal)
+select(water_goal, Goal) :: watergoal(Old) ==> watergoal(Goal) & ~watergoal(Old)
+value(water_goal, Goal) :- watergoal(Goal)
+value(water_goal, 0) :- ~watergoal(Goal)
+
+select(floss_goal, Goal) :: flossgoal(Goal)
+select(floss_goal, Goal) :: flossgoal(Old) ==> flossgoal(Goal) & ~flossgoal(Old)
+value(floss_goal, Goal) :- flossgoal(Goal)
+value(floss_goal, 0) :- ~flossgoal(Goal)
+
+select(class_goal, Goal) :: classgoal(Goal)
+select(class_goal, Goal) :: classgoal(Old) ==> classgoal(Goal) & ~classgoal(Old)
+value(class_goal, Goal) :- classgoal(Goal)
+value(class_goal, 0) :- ~classgoal(Goal)
+
+select(skincare_goal, Goal) :: skincaregoal(Goal)
+select(skincare_goal, Goal) :: skincaregoal(Old) ==> skincaregoal(Goal) & ~skincaregoal(Old)
+value(skincare_goal, Goal) :- skincaregoal(Goal)
+value(skincare_goal, 0) :- ~skincaregoal(Goal)
+
+select(lovedones_goal, Goal) :: lovedonesgoal(Goal)
+select(lovedones_goal, Goal) :: lovedonesgoal(Old) ==> lovedonesgoal(Goal) & ~lovedonesgoal(Old)
+value(lovedones_goal, Goal) :- lovedonesgoal(Goal)
+value(lovedones_goal, 0) :- ~lovedonesgoal(Goal)
+
+select(study_goal, Goal) :: studygoal(Goal)
+select(study_goal, Goal) :: studygoal(Old) ==> studygoal(Goal) & ~studygoal(Old)
+value(study_goal, Goal) :- studygoal(Goal)
+value(study_goal, 0) :- ~studygoal(Goal)
+
+select(read_goal, Goal) :: readgoal(Goal)
+select(read_goal, Goal) :: readgoal(Old) ==> readgoal(Goal) & ~readgoal(Old)
+value(read_goal, Goal) :- readgoal(Goal)
+value(read_goal, 0) :- ~readgoal(Goal)
+
+select(language_goal, Goal) :: languagegoal(Goal)
+select(language_goal, Goal) :: languagegoal(Old) ==> languagegoal(Goal) & ~languagegoal(Old)
+value(language_goal, Goal) :- languagegoal(Goal)
+value(language_goal, 0) :- ~languagegoal(Goal)
+
 exercisecount(Total) :- evaluate(countofall(X, task(X, exercise)), Total)
 innerhtml(exercise_count, Total) :- exercisecount(Total)
 innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+=======
+  init(exercisecount(0))
+
+  select(exercising_mon, X) :: task(mon, exercise) ==> ~task(mon, exercise)
+  select(exercising_mon, X) :: ~task(mon, exercise) ==> task(mon, exercise)
+  value(exercising_mon, true) :- task(mon, exercise)
+  value(exercising_mon, false) :- ~task(mon, exercise)
+  
+  select(exercising_tue, X) :: task(tue, exercise) ==> ~task(tue, exercise)
+  select(exercising_tue, X) :: ~task(tue, exercise) ==> task(tue, exercise)
+  value(exercising_tue, true) :- task(tue, exercise)
+  value(exercising_tue, false) :- ~task(tue, exercise)
+  
+  select(exercising_wed, X) :: task(wed, exercise) ==> ~task(wed, exercise)
+  select(exercising_wed, X) :: ~task(wed, exercise) ==> task(wed, exercise)
+  value(exercising_wed, true) :- task(wed, exercise)
+  value(exercising_wed, false) :- ~task(wed, exercise)
+  
+  select(exercising_thu, X) :: task(thu, exercise) ==> ~task(thu, exercise)
+  select(exercising_thu, X) :: ~task(thu, exercise) ==> task(thu, exercise)
+  value(exercising_thu, true) :- task(thu, exercise)
+  value(exercising_thu, false) :- ~task(thu, exercise)
+  
+  select(exercising_fri, X) :: task(fri, exercise) ==> ~task(fri, exercise)
+  select(exercising_fri, X) :: ~task(fri, exercise) ==> task(fri, exercise)
+  value(exercising_fri, true) :- task(fri, exercise)
+  value(exercising_fri, false) :- ~task(fri, exercise)
+  
+  select(exercising_sat, X) :: task(sat, exercise) ==> ~task(sat, exercise)
+  select(exercising_sat, X) :: ~task(sat, exercise) ==> task(sat, exercise)
+  value(exercising_sat, true) :- task(sat, exercise)
+  value(exercising_sat, false) :- ~task(sat, exercise)
+  
+  select(exercising_sun, X) :: task(sun, exercise) ==> ~task(sun, exercise)
+  select(exercising_sun, X) :: ~task(sun, exercise) ==> task(sun, exercise)
+  value(exercising_sun, true) :- task(sun, exercise)
+  value(exercising_sun, false) :- ~task(sun, exercise)
+  
+  select(exercise_goal, Goal) :: exercisegoal(Goal)
+  select(exercise_goal, Goal) :: exercisegoal(Old) ==> exercisegoal(Goal) & ~exercisegoal(Old)
+  value(exercise_goal, Goal) :- exercisegoal(Goal)
+  value(exercise_goal, 0) :- ~exercisegoal(Goal)
+  
+  exercisecount(Total) :- evaluate(countofall(X, task(X, exercise)), Total)
+  innerhtml(exercise_count, Total) :- exercisecount(Total)
+  innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+watercount(Total) :- evaluate(countofall(X, task(X, water)), Total)
+innerhtml(water_count, Total) :- watercount(Total)
+innerhtml(water_progress, Progress) :- watercount(Total) & watergoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+flosscount(Total) :- evaluate(countofall(X, task(X, floss)), Total)
+innerhtml(floss_count, Total) :- flosscount(Total)
+innerhtml(floss_progress, Progress) :- flosscount(Total) & flossgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+classcount(Total) :- evaluate(countofall(X, task(X, class)), Total)
+innerhtml(class_count, Total) :- classcount(Total)
+innerhtml(class_progress, Progress) :- classcount(Total) & classgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+skincarecount(Total) :- evaluate(countofall(X, task(X, skincare)), Total)
+innerhtml(skincare_count, Total) :- skincarecount(Total)
+innerhtml(skincare_progress, Progress) :- skincarecount(Total) & skincaregoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+lovedonescount(Total) :- evaluate(countofall(X, task(X, lovedones)), Total)
+innerhtml(lovedones_count, Total) :- lovedonescount(Total)
+innerhtml(lovedones_progress, Progress) :- lovedonescount(Total) & lovedonesgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+studycount(Total) :- evaluate(countofall(X, task(X, study)), Total)
+innerhtml(study_count, Total) :- studycount(Total)
+innerhtml(study_progress, Progress) :- studycount(Total) & studygoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+readcount(Total) :- evaluate(countofall(X, task(X, read)), Total)
+innerhtml(read_count, Total) :- readcount(Total)
+innerhtml(read_progress, Progress) :- readcount(Total) & readgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+languagecount(Total) :- evaluate(countofall(X, task(X, language)), Total)
+innerhtml(language_count, Total) :- languagecount(Total)
+innerhtml(language_progress, Progress) :- languagecount(Total) & languagegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+
+moncount(Total) :- evaluate(countofall(X, task(mon, X)), Total)
+innerhtml(mon_count, Total) :- moncount(Total)
+
+tuecount(Total) :- evaluate(countofall(X, task(tue, X)), Total)
+innerhtml(tue_count, Total) :- tuecount(Total)
+
+wedcount(Total) :- evaluate(countofall(X, task(wed, X)), Total)
+innerhtml(wed_count, Total) :- wedcount(Total)
+
+thucount(Total) :- evaluate(countofall(X, task(thu, X)), Total)
+innerhtml(thu_count, Total) :- thucount(Total)
+
+fricount(Total) :- evaluate(countofall(X, task(fri, X)), Total)
+innerhtml(fri_count, Total) :- fricount(Total)
+
+satcount(Total) :- evaluate(countofall(X, task(sat, X)), Total)
+innerhtml(sat_count, Total) :- satcount(Total)
+
+suncount(Total) :- evaluate(countofall(X, task(sun, X)), Total)
+innerhtml(sun_count, Total) :- suncount(Total)
 
 </textarea>
 
@@ -485,7 +1006,6 @@ function updatecharts() {
 </script>
 
 <!--=======================================================================-->
-
   </center>
 </body>
 
