@@ -816,52 +816,6 @@ value(language_goal, 0) :- ~languagegoal(Goal)
 exercisecount(Total) :- evaluate(countofall(X, task(X, exercise)), Total)
 innerhtml(exercise_count, Total) :- exercisecount(Total)
 innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
-=======
-  init(exercisecount(0))
-
-  select(exercising_mon, X) :: task(mon, exercise) ==> ~task(mon, exercise)
-  select(exercising_mon, X) :: ~task(mon, exercise) ==> task(mon, exercise)
-  value(exercising_mon, true) :- task(mon, exercise)
-  value(exercising_mon, false) :- ~task(mon, exercise)
-  
-  select(exercising_tue, X) :: task(tue, exercise) ==> ~task(tue, exercise)
-  select(exercising_tue, X) :: ~task(tue, exercise) ==> task(tue, exercise)
-  value(exercising_tue, true) :- task(tue, exercise)
-  value(exercising_tue, false) :- ~task(tue, exercise)
-  
-  select(exercising_wed, X) :: task(wed, exercise) ==> ~task(wed, exercise)
-  select(exercising_wed, X) :: ~task(wed, exercise) ==> task(wed, exercise)
-  value(exercising_wed, true) :- task(wed, exercise)
-  value(exercising_wed, false) :- ~task(wed, exercise)
-  
-  select(exercising_thu, X) :: task(thu, exercise) ==> ~task(thu, exercise)
-  select(exercising_thu, X) :: ~task(thu, exercise) ==> task(thu, exercise)
-  value(exercising_thu, true) :- task(thu, exercise)
-  value(exercising_thu, false) :- ~task(thu, exercise)
-  
-  select(exercising_fri, X) :: task(fri, exercise) ==> ~task(fri, exercise)
-  select(exercising_fri, X) :: ~task(fri, exercise) ==> task(fri, exercise)
-  value(exercising_fri, true) :- task(fri, exercise)
-  value(exercising_fri, false) :- ~task(fri, exercise)
-  
-  select(exercising_sat, X) :: task(sat, exercise) ==> ~task(sat, exercise)
-  select(exercising_sat, X) :: ~task(sat, exercise) ==> task(sat, exercise)
-  value(exercising_sat, true) :- task(sat, exercise)
-  value(exercising_sat, false) :- ~task(sat, exercise)
-  
-  select(exercising_sun, X) :: task(sun, exercise) ==> ~task(sun, exercise)
-  select(exercising_sun, X) :: ~task(sun, exercise) ==> task(sun, exercise)
-  value(exercising_sun, true) :- task(sun, exercise)
-  value(exercising_sun, false) :- ~task(sun, exercise)
-  
-  select(exercise_goal, Goal) :: exercisegoal(Goal)
-  select(exercise_goal, Goal) :: exercisegoal(Old) ==> exercisegoal(Goal) & ~exercisegoal(Old)
-  value(exercise_goal, Goal) :- exercisegoal(Goal)
-  value(exercise_goal, 0) :- ~exercisegoal(Goal)
-  
-  exercisecount(Total) :- evaluate(countofall(X, task(X, exercise)), Total)
-  innerhtml(exercise_count, Total) :- exercisecount(Total)
-  innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
 
 watercount(Total) :- evaluate(countofall(X, task(X, water)), Total)
 innerhtml(water_count, Total) :- watercount(Total)
