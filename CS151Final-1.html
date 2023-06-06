@@ -562,9 +562,9 @@ init(satcount(0))
 init(suncount(0))
 
 % Setting up inputs, tracking
+% exercising
 select(exercising_mon, X) :: task(mon, exercise) ==> ~task(mon, exercise)
 select(exercising_mon, X) :: ~task(mon, exercise) ==> task(mon, exercise)
-select(exercising_mon, X) :: style(exercising_mon, background-color, X) 
 style(mon_exercising, background-color, pink) :- task(mon, exercise)
 style(mon_exercising, background-color, white) :- ~task(mon, exercise)
 
@@ -601,6 +601,28 @@ select(exercising_sun, X) :: ~task(sun, exercise) ==> task(sun, exercise)
 value(exercising_sun, true) :- task(sun, exercise)
 value(exercising_sun, false) :- ~task(sun, exercise)
 
+style(mon_exercising, background-color, pink) :- task(mon, exercise)
+style(mon_exercising, background-color, white) :- ~task(mon, exercise)
+
+style(tue_exercising, background-color, pink) :- task(tue, exercise)
+style(tue_exercising, background-color, white) :- ~task(tue, exercise)
+
+style(wed_exercising, background-color, pink) :- task(wed, exercise)
+style(wed_exercising, background-color, white) :- ~task(wed, exercise)
+
+style(thu_exercising, background-color, pink) :- task(thu, exercise)
+style(thu_exercising, background-color, white) :- ~task(thu, exercise)
+
+style(fri_exercising, background-color, pink) :- task(fri, exercise)
+style(fri_exercising, background-color, white) :- ~task(fri, exercise)
+
+style(sat_exercising, background-color, pink) :- task(sat, exercise)
+style(sat_exercising, background-color, white) :- ~task(sat, exercise)
+
+style(sun_exercising, background-color, pink) :- task(sun, exercise)
+style(sun_exercising, background-color, white) :- ~task(sun, exercise)
+
+% water
 select(water_mon, X) :: task(mon, water) ==> ~task(mon, water)
 select(water_mon, X) :: ~task(mon, water) ==> task(mon, water)
 value(water_mon, true) :- task(mon, water)
@@ -636,6 +658,29 @@ select(water_sun, X) :: ~task(sun, water) ==> task(sun, water)
 value(water_sun, true) :- task(sun, water)
 value(water_sun, false) :- ~task(sun, water)
 
+style(mon_water, background-color, pink) :- task(mon, water)
+style(mon_water, background-color, white) :- ~task(mon, water)
+
+style(tue_water, background-color, pink) :- task(tue, water)
+style(tue_water, background-color, white) :- ~task(tue, water)
+
+style(wed_water, background-color, pink) :- task(wed, water)
+style(wed_water, background-color, white) :- ~task(wed, water)
+
+style(thu_water, background-color, pink) :- task(thu, water)
+style(thu_water, background-color, white) :- ~task(thu, water)
+
+style(fri_water, background-color, pink) :- task(fri, water)
+style(fri_water, background-color, white) :- ~task(fri, water)
+
+style(sat_water, background-color, pink) :- task(sat, water)
+style(sat_water, background-color, white) :- ~task(sat, water)
+
+style(sun_water, background-color, pink) :- task(sun, water)
+style(sun_water, background-color, white) :- ~task(sun, water)
+
+
+% flossing
 select(flossing_mon, X) :: task(mon, floss) ==> ~task(mon, floss)
 select(flossing_mon, X) :: ~task(mon, floss) ==> task(mon, floss)
 value(flossing_mon, true) :- task(mon, floss)
@@ -671,6 +716,28 @@ select(flossing_sun, X) :: ~task(sun, floss) ==> task(sun, floss)
 value(flossing_sun, true) :- task(sun, floss)
 value(flossing_sun, false) :- ~task(sun, floss)
 
+style(mon_flossing, background-color, pink) :- task(mon, floss)
+style(mon_flossing, background-color, white) :- ~task(mon, floss)
+
+style(tue_flossing, background-color, pink) :- task(tue, floss)
+style(tue_flossing, background-color, white) :- ~task(tue, floss)
+
+style(wed_flossing, background-color, pink) :- task(wed, floss)
+style(wed_flossing, background-color, white) :- ~task(wed, floss)
+
+style(thu_flossing, background-color, pink) :- task(thu, floss)
+style(thu_flossing, background-color, white) :- ~task(thu, floss)
+
+style(fri_flossing, background-color, pink) :- task(fri, floss)
+style(fri_flossing, background-color, white) :- ~task(fri, floss)
+
+style(sat_flossing, background-color, pink) :- task(sat, floss)
+style(sat_flossing, background-color, white) :- ~task(sat, floss)
+
+style(sun_flossing, background-color, pink) :- task(sun, floss)
+style(sun_flossing, background-color, white) :- ~task(sun, floss)
+
+% class
 select(class_mon, X) :: task(mon, class) ==> ~task(mon, class)
 select(class_mon, X) :: ~task(mon, class) ==> task(mon, class)
 value(class_mon, true) :- task(mon, class)
@@ -706,6 +773,28 @@ select(class_sun, X) :: ~task(sun, class) ==> task(sun, class)
 value(class_sun, true) :- task(sun, class)
 value(class_sun, false) :- ~task(sun, class)
 
+style(mon_class, background-color, pink) :- task(mon, class)
+style(mon_class, background-color, white) :- ~task(mon, class)
+
+style(tue_class, background-color, pink) :- task(tue, class)
+style(tue_class, background-color, white) :- ~task(tue, class)
+
+style(wed_class, background-color, pink) :- task(wed, class)
+style(wed_class, background-color, white) :- ~task(wed, class)
+
+style(thu_class, background-color, pink) :- task(thu, class)
+style(thu_class, background-color, white) :- ~task(thu, class)
+
+style(fri_class, background-color, pink) :- task(fri, class)
+style(fri_class, background-color, white) :- ~task(fri, class)
+
+style(sat_class, background-color, pink) :- task(sat, class)
+style(sat_class, background-color, white) :- ~task(sat, class)
+
+style(sun_class, background-color, pink) :- task(sun, class)
+style(sun_class, background-color, white) :- ~task(sun, class)
+
+% skincare
 select(skincare_mon, X) :: task(mon, skincare) ==> ~task(mon, skincare)
 select(skincare_mon, X) :: ~task(mon, skincare) ==> task(mon, skincare)
 value(skincare_mon, true) :- task(mon, skincare)
@@ -741,6 +830,28 @@ select(skincare_sun, X) :: ~task(sun, skincare) ==> task(sun, skincare)
 value(skincare_sun, true) :- task(sun, skincare)
 value(skincare_sun, false) :- ~task(sun, skincare)
 
+style(mon_skincare, background-color, pink) :- task(mon, skincare)
+style(mon_skincare, background-color, white) :- ~task(mon, skincare)
+
+style(tue_skincare, background-color, pink) :- task(tue, skincare)
+style(tue_skincare, background-color, white) :- ~task(tue, skincare)
+
+style(wed_skincare, background-color, pink) :- task(wed, skincare)
+style(wed_skincare, background-color, white) :- ~task(wed, skincare)
+
+style(thu_skincare, background-color, pink) :- task(thu, skincare)
+style(thu_skincare, background-color, white) :- ~task(thu, skincare)
+
+style(fri_skincare, background-color, pink) :- task(fri, skincare)
+style(fri_skincare, background-color, white) :- ~task(fri, skincare)
+
+style(sat_skincare, background-color, pink) :- task(sat, skincare)
+style(sat_skincare, background-color, white) :- ~task(sat, skincare)
+
+style(sun_skincare, background-color, pink) :- task(sun, skincare)
+style(sun_skincare, background-color, white) :- ~task(sun, skincare)
+
+% loved ones
 select(loved_ones_mon, X) :: task(mon, lovedones) ==> ~task(mon, lovedones)
 select(loved_ones_mon, X) :: ~task(mon, lovedones) ==> task(mon, lovedones)
 value(loved_ones_mon, true) :- task(mon, lovedones)
@@ -776,6 +887,28 @@ select(loved_ones_sun, X) :: ~task(sun, lovedones) ==> task(sun, lovedones)
 value(loved_ones_sun, true) :- task(sun, lovedones)
 value(loved_ones_sun, false) :- ~task(sun, lovedones)
 
+style(mon_loved_ones, background-color, pink) :- task(mon, lovedones)
+style(mon_loved_ones, background-color, white) :- ~task(mon, lovedones)
+
+style(tue_loved_ones, background-color, pink) :- task(tue, lovedones)
+style(tue_loved_ones, background-color, white) :- ~task(tue, lovedones)
+
+style(wed_loved_ones, background-color, pink) :- task(wed, lovedones)
+style(wed_loved_ones, background-color, white) :- ~task(wed, lovedones)
+
+style(thu_loved_ones, background-color, pink) :- task(thu, lovedones)
+style(thu_loved_ones, background-color, white) :- ~task(thu, lovedones)
+
+style(fri_loved_ones, background-color, pink) :- task(fri, lovedones)
+style(fri_loved_ones, background-color, white) :- ~task(fri, lovedones)
+
+style(sat_loved_ones, background-color, pink) :- task(sat, lovedones)
+style(sat_loved_ones, background-color, white) :- ~task(sat, lovedones)
+
+style(sun_loved_ones, background-color, pink) :- task(sun, lovedones)
+style(sun_loved_ones, background-color, white) :- ~task(sun, lovedones)
+
+% study
 select(study_mon, X) :: task(mon, study) ==> ~task(mon, study)
 select(study_mon, X) :: ~task(mon, study) ==> task(mon, study)
 value(study_mon, true) :- task(mon, study)
@@ -811,6 +944,29 @@ select(study_sun, X) :: ~task(sun, study) ==> task(sun, study)
 value(study_sun, true) :- task(sun, study)
 value(study_sun, false) :- ~task(sun, study)
 
+style(mon_study, background-color, pink) :- task(mon, study)
+style(mon_study, background-color, white) :- ~task(mon, study)
+
+style(tue_study, background-color, pink) :- task(tue, study)
+style(tue_study, background-color, white) :- ~task(tue, study)
+
+style(wed_study, background-color, pink) :- task(wed, study)
+style(wed_study, background-color, white) :- ~task(wed, study)
+
+style(thu_study, background-color, pink) :- task(thu, study)
+style(thu_study, background-color, white) :- ~task(thu, study)
+
+style(fri_study, background-color, pink) :- task(fri, study)
+style(fri_study, background-color, white) :- ~task(fri, study)
+
+style(sat_study, background-color, pink) :- task(sat, study)
+style(sat_study, background-color, white) :- ~task(sat, study)
+
+style(sun_study, background-color, pink) :- task(sun, study)
+style(sun_study, background-color, white) :- ~task(sun, study)
+
+
+%read
 select(read_mon, X) :: task(mon, read) ==> ~task(mon, read)
 select(read_mon, X) :: ~task(mon, read) ==> task(mon, read)
 value(read_mon, true) :- task(mon, read)
@@ -846,6 +1002,28 @@ select(read_sun, X) :: ~task(sun, read) ==> task(sun, read)
 value(read_sun, true) :- task(sun, read)
 value(read_sun, false) :- ~task(sun, read)
 
+style(mon_read, background-color, pink) :- task(mon, read)
+style(mon_read, background-color, white) :- ~task(mon, read)
+
+style(tue_read, background-color, pink) :- task(tue, read)
+style(tue_read, background-color, white) :- ~task(tue, read)
+
+style(wed_read, background-color, pink) :- task(wed, read)
+style(wed_read, background-color, white) :- ~task(wed, read)
+
+style(thu_read, background-color, pink) :- task(thu, read)
+style(thu_read, background-color, white) :- ~task(thu, read)
+
+style(fri_read, background-color, pink) :- task(fri, read)
+style(fri_read, background-color, white) :- ~task(fri, read)
+
+style(sat_read, background-color, pink) :- task(sat, read)
+style(sat_read, background-color, white) :- ~task(sat, read)
+
+style(sun_read, background-color, pink) :- task(sun, read)
+style(sun_read, background-color, white) :- ~task(sun, read)
+
+% language
 select(language_mon, X) :: task(mon, language) ==> ~task(mon, language)
 select(language_mon, X) :: ~task(mon, language) ==> task(mon, language)
 value(language_mon, true) :- task(mon, language)
@@ -881,6 +1059,29 @@ select(language_sun, X) :: ~task(sun, language) ==> task(sun, language)
 value(language_sun, true) :- task(sun, language)
 value(language_sun, false) :- ~task(sun, language)
 
+style(mon_language, background-color, pink) :- task(mon, language)
+style(mon_language, background-color, white) :- ~task(mon, language)
+
+style(tue_language, background-color, pink) :- task(tue, language)
+style(tue_language, background-color, white) :- ~task(tue, language)
+
+style(wed_language, background-color, pink) :- task(wed, language)
+style(wed_language, background-color, white) :- ~task(wed, language)
+
+style(thu_language, background-color, pink) :- task(thu, language)
+style(thu_language, background-color, white) :- ~task(thu, language)
+
+style(fri_language, background-color, pink) :- task(fri, language)
+style(fri_language, background-color, white) :- ~task(fri, language)
+
+style(sat_language, background-color, pink) :- task(sat, language)
+style(sat_language, background-color, white) :- ~task(sat, language)
+
+style(sun_language, background-color, pink) :- task(sun, language)
+style(sun_language, background-color, white) :- ~task(sun, language)
+
+
+% Goalsetting
 select(exercise_goal, Goal) :: exercisegoal(Goal)
 select(exercise_goal, Goal) :: exercisegoal(Old) ==> exercisegoal(Goal) & ~exercisegoal(Old)
 value(exercise_goal, Goal) :- exercisegoal(Goal)
