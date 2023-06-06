@@ -61,24 +61,31 @@
 </div>
 
 <div class="header">
-  <div style="font-size: 15px; text-align: left; padding-left: 22%;"><b style="color: red">Step 1: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
+  <div style="font-size: 15px; text-align: left; padding-left: 22%;"><b style="color: blue">Start: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
 </div>
 <div>
-  <table style="align-items: center;" cellspacing='0' border='1'>
-    <tr>
-      <th style="padding: 10px;"></th>
-      <th style="padding: 10px;">Exercise</th>
-      <th style="padding: 10px;">Drink Water</th>
-      <th style="padding: 10px;">Floss</th>
-      <th style="padding: 10px;">Class</th>
-      <th style="padding: 10px;">Skincare</th>
-      <th style="padding: 10px;">Call Loved Ones</th>
-      <th style="padding: 10px;">Study</th>
-      <th style="padding: 10px;">Read</th>
-      <th style="padding: 10px;">Language</th>
+
+<table style="margin-right: 3%;" cellspacing='0' border='1'>
+  <tr>
+      <th class="table"></th>
+      <th class="table mon">MON</th>
+      <th class="table tue">TUE</th>
+      <th class="table wed">WED</th>
+      <th class="table thu">THU</th>
+      <th class="table fri">FRI</th>
+      <th class="table sat">SAT</th>
+      <th class="table sun">SUN</th>
+      <th class="table goal">GOAL</th>
     </tr>
     <tr>
-      <th style="padding: 10px;" class="table">Goal </th>
+      <th class="table">Exercised 🏃 </th>
+      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
       <td>
         <select id='exercise_goal' style='width:100%' onchange='handle(this)'>
           <option>0</option>
@@ -91,6 +98,16 @@
           <option>7</option>
         </select>
       </td>
+    </tr>
+    <tr>
+      <th class="table">Drank 64oz water 🚰</th>
+      <td class="table mon"><input id='water_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='water_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='water_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='water_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='water_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='water_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
         <select id='water_goal' style='width:100%' onchange='handle(this)'>
           <option>0</option>
@@ -103,6 +120,17 @@
           <option>7</option>
         </select>
       </td>
+    </tr>
+
+    <tr>
+      <th class="table">Flossed 🦷 </th>
+      <td class="table mon"><input id='flossing_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='flossing_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='flossing_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='flossing_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='flossing_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='flossing_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='flossing_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
         <select id='floss_goal' style='width:100%' onchange='handle(this)'>
           <option>0</option>
@@ -115,6 +143,17 @@
           <option>7</option>
         </select>
       </td>
+    </tr>
+
+    <tr>
+      <th class="table">Went to class 📚 </th>
+      <td class="table mon"><input id='class_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='class_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='class_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='class_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='class_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='class_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
         <select id='class_goal' style='width:100%' onchange='handle(this)'>
           <option>0</option>
@@ -127,6 +166,17 @@
           <option>7</option>
         </select>
       </td>
+    </tr>
+
+    <tr>
+      <th class="table">Skincare routine 🪞 </th>
+      <td class="table mon"><input id='skincare_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='skincare_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='skincare_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='skincare_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='skincare_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='skincare_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='skincare_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
         <select id='skincare_goal' style='width:100%' onchange='handle(this)'>
           <option>0</option>
@@ -139,6 +189,17 @@
           <option>7</option>
         </select>
       </td>
+    </tr>
+
+    <tr>
+      <th class="table">Call loved ones 💟 </th>
+      <td class="table mon"><input id='loved_ones_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='loved_ones_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='loved_ones_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='loved_ones_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='loved_ones_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='loved_ones_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
         <select id='lovedones_goal' style='width:100%' onchange='handle(this)'>
           <option>0</option>
@@ -151,46 +212,87 @@
           <option>7</option>
         </select>
       </td>
-      <td>
-      <select id='study_goal' style='width:100%' onchange='handle(this)'>
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-      </select>
-    </td>
-    <td>
-      <select id='read_goal' style='width:100%' onchange='handle(this)'>
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-      </select>
-    </td>
-    <td>
-      <select id='language_goal' style='width:100%' onchange='handle(this)'>
-        <option>0</option>
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-      </select>
-    </td>
     </tr>
+
+    <tr>
+      <th class="table">Study 📗 </th>
+      <td class="table mon"><input id='study_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='study_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='study_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='study_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='study_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='study_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='study_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td>
+        <select id='study_goal' style='width:100%' onchange='handle(this)'>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th class="table">Read 📕 </th>
+      <td class="table mon"><input id='read_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='read_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='read_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='read_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='read_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='read_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='read_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td>
+        <select id='read_goal' style='width:100%' onchange='handle(this)'>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th class="table">Practiced language 🌐 </th>
+      <td class="table mon"><input id='language_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table tue"><input id='language_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table wed"><input id='language_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table thu"><input id='language_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table fri"><input id='language_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sat"><input id='language_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table sun"><input id='language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td>
+        <select id='language_goal' style='width:100%' onchange='handle(this)'>
+          <option>0</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+        </select>
+      </td>
+    </tr>
+
+
+    <!-- Continue with the remaining habits, making sure to provide a unique id for each checkbox -->
   </table>
+
+
 </div>
-<!-- RESULTS SECTION! -->
+
+ <!-- Reading Statistics -->
+ <div class="rulessection" style="padding: 1em; margin: 1em;">
+  <h2>Statistics</h2>
+  <!-- The Statistics -->
+  <!-- RESULTS SECTION! -->
 <div style="color: black">
   NUMBER OF TIMES YOU EXERCISED: <span id='exercise_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
   PROGRESS: <span id='exercise_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
@@ -228,126 +330,6 @@
   Saturday Activity Count: <span id='sat_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
   Sunday Activity Count: <span id='sun_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
 </div>
-
-<table style="margin-right: 3%;" cellspacing='0' border='1'>
-  <tr>
-      <th class="table"></th>
-      <th class="table mon">MON</th>
-      <th class="table tue">TUE</th>
-      <th class="table wed">WED</th>
-      <th class="table thu">THU</th>
-      <th class="table fri">FRI</th>
-      <th class="table sat">SAT</th>
-      <th class="table sun">SUN</th>
-    </tr>
-    <tr>
-      <th class="table">Exercised 🏃 </th>
-      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
-
-    </tr>
-    <tr>
-      <th class="table">Drank 64oz water 🚰</th>
-      <td class="table mon"><input id='water_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='water_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='water_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='water_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='water_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='water_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Flossed 🦷 </th>
-      <td class="table mon"><input id='flossing_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='flossing_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='flossing_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='flossing_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='flossing_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='flossing_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='flossing_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Went to class 📚 </th>
-      <td class="table mon"><input id='class_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='class_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='class_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='class_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='class_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='class_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Skincare routine 🪞 </th>
-      <td class="table mon"><input id='skincare_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='skincare_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='skincare_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='skincare_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='skincare_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='skincare_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='skincare_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Call loved ones 💟 </th>
-      <td class="table mon"><input id='loved_ones_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='loved_ones_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='loved_ones_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='loved_ones_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='loved_ones_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='loved_ones_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Study 📗 </th>
-      <td class="table mon"><input id='study_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='study_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='study_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='study_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='study_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='study_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='study_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-    <tr>
-      <th class="table">Read 📕 </th>
-      <td class="table mon"><input id='read_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='read_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='read_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='read_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='read_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='read_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='read_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-    <tr>
-      <th class="table">Practiced language 🌐 </th>
-      <td class="table mon"><input id='language_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='language_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='language_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='language_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='language_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='language_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-    </tr>
-
-
-    <!-- Continue with the remaining habits, making sure to provide a unique id for each checkbox -->
-  </table>
-
-
-</div>
-
- <!-- Reading Statistics -->
- <div class="rulessection" style="padding: 1em; margin: 1em;">
-  <h2>Statistics</h2>
-  <!-- The Statistics -->
   <table width='100%'>
     <tr>
         <td valign="top">
