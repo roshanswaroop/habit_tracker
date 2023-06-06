@@ -34,6 +34,11 @@
         border-color: white;
         padding: 0%;
       }
+      .stats-container {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+      }
 
       /* .mon { background-color: #f9d7dd; } /* Pastel pink */
       /* .tue { background-color: #ffecd1; } /* Pastel red */
@@ -61,7 +66,7 @@
 </div>
 
 <div class="header">
-  <div style="font-size: 15px; text-align: left; padding-left: 22%;"><b style="color: blue">Start: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
+  <div style="font-size: 15px; text-align: left; padding-left: 25%;"><b style="color: blue">Start: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
 </div>
 <div>
 
@@ -87,7 +92,7 @@
       <td class="table sat" id="sat_exercising"><input id='exercising_sat' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
       <td class="table sun" id="sun_exercising"><input id='exercising_sun' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
       <td>
-        <select id='exercise_goal' style='width:100%' onchange='handle(this)'>
+        <select id='exercise_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -110,7 +115,7 @@
       <td class="table sun" id="sun_water"><input id='water_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
 
       <td>
-        <select id='water_goal' style='width:100%' onchange='handle(this)'>
+        <select id='water_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -134,7 +139,7 @@
       <td class="table sun" id="sun_flossing"><input id='flossing_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
 
       <td>
-        <select id='floss_goal' style='width:100%' onchange='handle(this)'>
+        <select id='floss_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -158,7 +163,7 @@
       <td class="table sun" id="sun_class"><input id='class_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
 
       <td>
-        <select id='class_goal' style='width:100%' onchange='handle(this)'>
+        <select id='class_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -182,7 +187,7 @@
       <td class="table sun" id="sun_skincare"><input id='skincare_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
 
       <td>
-        <select id='skincare_goal' style='width:100%' onchange='handle(this)'>
+        <select id='skincare_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -206,7 +211,7 @@
       <td class="table sun" id="sun_loved_ones"><input id='loved_ones_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
 
       <td>
-        <select id='lovedones_goal' style='width:100%' onchange='handle(this)'>
+        <select id='lovedones_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -229,7 +234,7 @@
       <td class="table sat" id="sat_study"><input id='study_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td class="table sun" id="sun_study"><input id='study_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
       <td>
-        <select id='study_goal' style='width:100%' onchange='handle(this)'>
+        <select id='study_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -252,7 +257,7 @@
       <td class="table sun" id="sun_read"><input id='read_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
 
       <td>
-        <select id='read_goal' style='width:100%' onchange='handle(this)'>
+        <select id='read_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -275,7 +280,7 @@
       <td class="table sun" id="sun_language"><input id='language_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
 
       <td>
-        <select id='language_goal' style='width:100%' onchange='handle(this)'>
+        <select id='language_goal' style='width:100%' onchange="handle(this); updatecharts();">
           <option>0</option>
           <option>1</option>
           <option>2</option>
@@ -305,46 +310,120 @@
   
  <!-- Reading Statistics -->
  <div class="rulessection" style="padding: 1em; margin: 1em;">
-  <h2>Statistics</h2>
+  <h2>Quick Stats 🔥</h2>
   <!-- The Statistics -->
   <!-- RESULTS SECTION! -->
-<div style="color: black">
-  NUMBER OF TIMES YOU EXERCISED: <span id='exercise_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='exercise_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-  
-  NUMBER OF TIMES YOU DRANK WATER: <span id='water_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='water_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
+<div class="stats-container" style="color: black;">
+  <div>
+  <table>
+    <tr>
+      <td><b>Exercise 🏃 </b></td>
+      <td>Total # Days: <span id='exercise_count' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span></td>
+      <td style="padding-right: 15px;"><b>Drank 64oz water🚰  </b></td>
+      <td>Total # Days: <span id='water_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td style="padding-right: 15px;">Progress Towards Goal : <span id='exercise_progress' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span> %</td>
+      <td></td>
+      <td style="padding-right: 15px;">Progress Towards Goal : <span id='water_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
+    <tr>
+      <td><b>Flossed 🦷  </b></td>
+      <td>Total # Days: <span id='floss_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+      <td><b>Went to class 📚  </b></td>
+      <td>Total # Days:<span id='class_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Progress Towards Goal : <span id='floss_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+      <td></td>
+      <td>Progress Towards Goal : <span id='class_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
+    <tr>
+      <td><b>Skincare routine 🪞  </b></td>
+      <td>Total # Days: <span id='skincare_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+      <td><b>Call loved ones 💟  </b></td>
+      <td>Total # Days: <span id='lovedones_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Progress Towards Goal : <span id='skincare_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+      <td></td>
+      <td>Progress Towards Goal : <span id='lovedones_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
+    <tr>
+      <td><b>Study 📗  </b></td>
+      <td>Total # Days: <span id='study_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+      <td><b>Read 📕 </b></td>
+      <td>Total # Days: <span id='read_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Progress Towards Goal : <span id='study_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+      <td></td>
+      <td>Progress Towards Goal : <span id='read_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
+    <tr>
+      <td style="padding-right: 15px;"><b>Practiced language 🌐	  </b></td>
+      <td>Total # Days: <span id='language_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Progress Towards Goal : <span id='language_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
+  </table>
 
-  NUMBER OF TIMES YOU FLOSSED: <span id='floss_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='floss_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU WENT TO CLASS: <span id='class_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='class_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU DID SKINCARE: <span id='skincare_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='skincare_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU CALLED LOVED ONES: <span id='lovedones_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='lovedones_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU STUDIED: <span id='study_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='study_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU READ: <span id='read_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='read_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU PRACTICED A LANGUAGE: <span id='language_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='language_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
 </div>
-<div style="color: black">
-  Monday Activity Count: <span id='mon_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Tuesday Activity Count: <span id='tue_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Wednesday Activity Count: <span id='wed_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Thursday Activity Count: <span id='thu_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Friday Activity Count: <span id='fri_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Saturday Activity Count: <span id='sat_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
-  Sunday Activity Count: <span id='sun_count' style='font-size:18px; color: purple;' onchange='handle(this)'> </span> </br>
+<div>
+  <table style="color:grey">
+    <tr>
+      <td><b>Mon. Score: </b></td>
+      <td><b><span id='mon_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Tues. Score: </b></td>
+      <td><b><span id='tue_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Wed. Score: </b></td>
+      <td><b><span id='wed_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td style="padding-right: 10px;"><b>Thurs. Score: </b></td>
+      <td><b><span id='thu_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Fri. Score: </b></td>
+      <td><b><span id='fri_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Sat. Score: </b></td>
+      <td><b><span id='sat_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Sun. Score: </b></td>
+      <td><b><span id='sun_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td style="color: palevioletred"><b>Most Active Day: </b></td>
+      <td><b><span id='most_active' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td style="color: palevioletred"><b>Favorite Activity: </b></td>
+      <td><b><span id='fav_activity' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+  </table>
 </div>
+</div>
+
+
+</div>
+
+ <!-- Reading Statistics -->
+ <div class="rulessection" style="padding: 1em; margin: 1em;">
+  <h2>Activity Charts 💪</h2>
+  <!-- The Statistics -->
   <table width='100%'>
     <tr>
         <td valign="top">
@@ -352,8 +431,39 @@
         </td>
         <td valign="top">
           <canvas id="chartdays" style="max-width:400px"></canvas>
-      </td>
+        </td>
+        <td valign="top">
+          <canvas id="exercisegoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="watergoal_chart" style="max-width:300px"></canvas>
+        </td>
     </tr>
+    <tr>
+        <td valign="top">
+          <canvas id="flossgoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="classgoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="skincaregoal_chart" style="max-width:300px"></canvas>
+        </td>
+        <td valign="top">
+          <canvas id="lovedonesgoal_chart" style="max-width:300px"></canvas>
+        </td>
+    </tr>
+    <tr>
+      <td valign="top">
+        <canvas id="studygoal_chart" style="max-width:300px"></canvas>
+      </td>
+      <td valign="top">
+        <canvas id="readgoal_chart" style="max-width:300px"></canvas>
+      </td>
+      <td valign="top">
+        <canvas id="languagegoal_chart" style="max-width:300px"></canvas>
+      </td>
+  </tr>
   </table>
 </div>
 
@@ -819,7 +929,8 @@ value(language_goal, 0) :- ~languagegoal(Goal)
 % Counting tasks
 exercisecount(Total) :- evaluate(countofall(X, task(X, exercise)), Total)
 innerhtml(exercise_count, Total) :- exercisecount(Total)
-innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(exercise_progress, "") :- exercisecount(Total) & exercisegoal(Goal) & ~leq(1, Goal)
 
 
 reached_exercise_goal :- exercisecount(Total) & exercisegoal(Goal) & leq(Goal, Total) & leq(1, Goal)
@@ -836,35 +947,43 @@ innerhtml(exercise_goal_reached,W) :- running(W)
 
 watercount(Total) :- evaluate(countofall(X, task(X, water)), Total)
 innerhtml(water_count, Total) :- watercount(Total)
-innerhtml(water_progress, Progress) :- watercount(Total) & watergoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(water_progress, Progress) :- watercount(Total) & watergoal(Goal) & leq(1, Goal) & leq(1, Goal)evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(water_progress, "") :- watercount(Total) & watergoal(Goal) & ~leq(1, Goal)
 
 flosscount(Total) :- evaluate(countofall(X, task(X, floss)), Total)
 innerhtml(floss_count, Total) :- flosscount(Total)
-innerhtml(floss_progress, Progress) :- flosscount(Total) & flossgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(floss_progress, Progress) :- flosscount(Total) & flossgoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(floss_progress, "") :- flosscount(Total) & flossgoal(Goal) & ~leq(1, Goal)
 
 classcount(Total) :- evaluate(countofall(X, task(X, class)), Total)
 innerhtml(class_count, Total) :- classcount(Total)
-innerhtml(class_progress, Progress) :- classcount(Total) & classgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(class_progress, Progress) :- classcount(Total) & classgoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(class_progress, "") :- classcount(Total) & classgoal(Goal) & ~leq(1, Goal)
 
 skincarecount(Total) :- evaluate(countofall(X, task(X, skincare)), Total)
 innerhtml(skincare_count, Total) :- skincarecount(Total)
-innerhtml(skincare_progress, Progress) :- skincarecount(Total) & skincaregoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(skincare_progress, Progress) :- skincarecount(Total) & skincaregoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(skincare_progress, "") :- skincarecount(Total) & skincaregoal(Goal) & ~leq(1, Goal)
 
 lovedonescount(Total) :- evaluate(countofall(X, task(X, lovedones)), Total)
 innerhtml(lovedones_count, Total) :- lovedonescount(Total)
-innerhtml(lovedones_progress, Progress) :- lovedonescount(Total) & lovedonesgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(lovedones_progress, Progress) :- lovedonescount(Total) & lovedonesgoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(lovedones_progress, "") :- lovedonescount(Total) & lovedonesgoal(Goal) & ~leq(1, Goal)
 
 studycount(Total) :- evaluate(countofall(X, task(X, study)), Total)
 innerhtml(study_count, Total) :- studycount(Total)
-innerhtml(study_progress, Progress) :- studycount(Total) & studygoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(study_progress, Progress) :- studycount(Total) & studygoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(study_progress, "") :- studycount(Total) & studygoal(Goal) & ~leq(1, Goal)
 
 readcount(Total) :- evaluate(countofall(X, task(X, read)), Total)
 innerhtml(read_count, Total) :- readcount(Total)
-innerhtml(read_progress, Progress) :- readcount(Total) & readgoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(read_progress, Progress) :- readcount(Total) & readgoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(read_progress, "") :- readcount(Total) & readgoal(Goal) & ~leq(1, Goal)
 
 languagecount(Total) :- evaluate(countofall(X, task(X, language)), Total)
 innerhtml(language_count, Total) :- languagecount(Total)
-innerhtml(language_progress, Progress) :- languagecount(Total) & languagegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(language_progress, Progress) :- languagecount(Total) & languagegoal(Goal) & leq(1, Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+innerhtml(language_progress, "") :- languagecount(Total) & languagegoal(Goal) & ~leq(1, Goal) 
 
 moncount(Total) :- evaluate(countofall(X, task(mon, X)), Total)
 innerhtml(mon_count, Total) :- moncount(Total)
@@ -886,6 +1005,26 @@ innerhtml(sat_count, Total) :- satcount(Total)
 
 suncount(Total) :- evaluate(countofall(X, task(sun, X)), Total)
 innerhtml(sun_count, Total) :- suncount(Total)
+
+innerhtml(most_active, "") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), 0)
+innerhtml(most_active, "Monday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), A)
+innerhtml(most_active, "Tuesday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), B)
+innerhtml(most_active, "Wednesday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), C)
+innerhtml(most_active, "Thursday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), D)
+innerhtml(most_active, "Friday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), E)
+innerhtml(most_active, "Saturday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), F)
+innerhtml(most_active, "Sunday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), G)
+
+innerhtml(fav_activity, "") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), 0)
+innerhtml(fav_activity, "Exercise 🏃") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), A)
+innerhtml(fav_activity, "Drink Water🚰") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), B)
+innerhtml(fav_activity, "Floss 🦷") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), C)
+innerhtml(fav_activity, "Class 📚") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), D)
+innerhtml(fav_activity, "Skincare 🪞") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), E)
+innerhtml(fav_activity, "Call loved ones 💟") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), F)
+innerhtml(fav_activity, "Study 📗	") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), G)
+innerhtml(fav_activity, "Read 📕") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), H)
+innerhtml(fav_activity, "Practiced language 🌐	") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), I)
 
 </textarea>
 
@@ -939,6 +1078,242 @@ innerhtml(sun_count, Total) :- suncount(Total)
   }
   });
 
+
+var xValuesExerciseGoal = ["Days Exercised", "Days Left For Goal"];
+var goalColors = ["green", "black"];
+var yValuesExerciseGoal = [0, 0];
+var exercisegoal_chart = new Chart("exercisegoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesExerciseGoal,
+      datasets: [{
+        backgroundColor: goalColors,
+        data: yValuesExerciseGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days Exercised',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesWaterGoal = ["Days Water Drank", "Days Left For Goal"];
+var goalColors = ["blue", "black"];
+var yValuesWaterGoal = [0, 0];
+var watergoal_chart = new Chart("watergoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesWaterGoal,
+      datasets: [{
+        backgroundColor: goalColors,
+        data: yValuesWaterGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days Water Drank',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesFlossGoal = ["Days Flossed", "Days Left For Goal"];
+var flossGoalColors = ["brown", "black"];
+var yValuesFlossGoal = [0, 0];
+var flossgoal_chart = new Chart("flossgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesFlossGoal,
+      datasets: [{
+        backgroundColor: flossGoalColors,
+        data: yValuesFlossGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days Flossed',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesClassGoal = ["Days Class Attended", "Days Left For Goal"];
+var classGoalColors = ["purple", "black"];
+var yValuesClassGoal = [0, 0];
+var classgoal_chart = new Chart("classgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesClassGoal,
+      datasets: [{
+        backgroundColor: classGoalColors,
+        data: yValuesClassGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days Class Attended',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesSkinCareGoal = ["Days of Skin Care", "Days Left For Goal"];
+var skinCareGoalColors = ["red", "black"];
+var yValuesskinCareGoal = [0, 0];
+var skincaregoal_chart = new Chart("skincaregoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesSkinCareGoal,
+      datasets: [{
+        backgroundColor: skinCareGoalColors,
+        data: yValuesskinCareGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Skin Care',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValuesLovedOnesGoal = ["Days of Calling Loved Ones", "Days Left For Goal"];
+var lovedOneGoalColors = ["pink", "black"];
+var yValueslovedOneGoal = [0, 0];
+var lovedonesgoal_chart = new Chart("lovedonesgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValuesLovedOnesGoal,
+      datasets: [{
+        backgroundColor: lovedOneGoalColors,
+        data: yValueslovedOneGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Calling Loved Ones',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValueStudyGoal = ["Days of Studying", "Days Left For Goal"];
+var studyGoalColors = ["green", "black"];
+var yValuesStudyGoal = [0, 0];
+var studygoal_chart = new Chart("studygoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValueStudyGoal,
+      datasets: [{
+        backgroundColor: studyGoalColors,
+        data: yValuesStudyGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Studying',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+var xValueReadGoal = ["Days of Reading", "Days Left For Goal"];
+var readGoalColors = ["blue", "black"];
+var yValuesReadGoal = [0, 0];
+var readgoal_chart = new Chart("readgoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValueReadGoal,
+      datasets: [{
+        backgroundColor: readGoalColors,
+        data: yValuesReadGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Reading',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
+
+var xValueLanguageGoal = ["Days of Language", "Days Left For Goal"];
+var languageGoalColors = ["brown", "black"];
+var yValuesLanguageGoal = [0, 0];
+var languagegoal_chart = new Chart("languagegoal_chart", {
+  type: "doughnut",
+    data: {
+      labels: xValueLanguageGoal,
+      datasets: [{
+        backgroundColor: languageGoalColors,
+        data: yValuesLanguageGoal
+      }]
+    },
+  options: {
+    maintainAspectRatio: false,
+    plugins: {
+        title: {
+          display: true,
+          text: 'Days of Language',
+          font: {
+            size: 15
+        }
+    }
+  }
+  }
+});
+
 function updatechartActivities(){
     /* chart activites updating */
   // TODO: create total activity variable
@@ -946,32 +1321,170 @@ function updatechartActivities(){
   chartactivities.data.datasets[0].data = [];
   // TODO: create all counts other than exercise_count
   chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('exercise_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('water_drank_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('flossed_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('went_to_class_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('call_loved_ones_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('study_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
-  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('practice_language_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('water_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('floss_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('class_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('skincare_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('lovedones_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('study_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('language_count').innerText));
   chartactivities.update();
 }
 
 function updatechartDays(){
-  //console.log(document.getElementById('monday_count').innerText);
+  //console.log(document.getElementById('mon_count').innerText);
   chartdays.data.datasets[0].data = [];
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('monday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('tuesday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('wednesday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('thursday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('friday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('saturday_count').innerText));
-  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('sunday_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('mon_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('tue_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('wed_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('thu_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('fri_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('sat_count').innerText));
+  chartdays.data.datasets[0].data.push(parseInt(document.getElementById('sun_count').innerText));
   chartdays.update();
 }
+
+function updateExerciseGoals(){
+  exercisegoal_chart.data.datasets[0].data = []
+  exercisegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('exercise_count').innerText));
+
+  if (parseInt(document.getElementById("exercise_goal").value) == 0){
+    exercisegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("exercise_goal").value));
+  } else if ((parseInt(document.getElementById("exercise_goal").value) < (parseInt(document.getElementById('exercise_count').innerText)))) {
+    exercisegoal_chart.data.datasets[0].data.push(0);
+  } else {
+    exercisegoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("exercise_goal").value) - (parseInt(document.getElementById('exercise_count').innerText))));
+  }
+  exercisegoal_chart.update();
+}
+
+function updateWaterGoals(){
+  watergoal_chart.data.datasets[0].data = []
+  watergoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('water_count').innerText));
+  if (parseInt(document.getElementById("water_goal").value) == 0){
+    watergoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("water_goal").value));
+  } else if ((parseInt(document.getElementById("water_goal").value) < (parseInt(document.getElementById('water_count').innerText)))) {
+    watergoal_chart.data.datasets[0].data.push(0);
+  } else {
+    watergoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("water_goal").value) - (parseInt(document.getElementById('water_count').innerText))));
+  }
+  watergoal_chart.update();
+}
+
+function updateFlossGoals(){
+  flossgoal_chart.data.datasets[0].data = []
+  flossgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('floss_count').innerText));
+
+  if (parseInt(document.getElementById("floss_goal").value) == 0){
+    flossgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("floss_goal").value));
+  } else if ((parseInt(document.getElementById("floss_goal").value) < (parseInt(document.getElementById('floss_count').innerText)))) {
+    flossgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    flossgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("floss_goal").value) - (parseInt(document.getElementById('floss_count').innerText))));
+  }
+
+  flossgoal_chart.update();
+}
+
+function updateClassGoals(){
+  classgoal_chart.data.datasets[0].data = []
+  classgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('class_count').innerText));
+
+  if (parseInt(document.getElementById("class_goal").value) == 0){
+    classgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("class_goal").value));
+  } else if ((parseInt(document.getElementById("class_goal").value) < (parseInt(document.getElementById('class_count').innerText)))) {
+    classgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    classgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("class_goal").value) - (parseInt(document.getElementById('class_count').innerText))));
+  }
+
+  classgoal_chart.update();
+}
+
+function updateSkinCareGoals(){
+  skincaregoal_chart.data.datasets[0].data = []
+  skincaregoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('skincare_count').innerText));
+
+  if (parseInt(document.getElementById("skincare_goal").value) == 0){
+    skincaregoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("skincare_goal").value));
+  } else if ((parseInt(document.getElementById("skincare_goal").value) < (parseInt(document.getElementById('skincare_count').innerText)))) {
+    skincaregoal_chart.data.datasets[0].data.push(0);
+  } else {
+    skincaregoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("skincare_goal").value) - (parseInt(document.getElementById('skincare_count').innerText))));
+  }
+  skincaregoal_chart.update();
+}
+
+function updateLovedOnesGoals(){
+  lovedonesgoal_chart.data.datasets[0].data = []
+  lovedonesgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('lovedones_count').innerText));
+
+  if (parseInt(document.getElementById("lovedones_goal").value) == 0){
+    lovedonesgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("lovedones_goal").value));
+  } else if ((parseInt(document.getElementById("lovedones_goal").value) < (parseInt(document.getElementById('lovedones_count').innerText)))) {
+    lovedonesgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    lovedonesgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("lovedones_goal").value) - (parseInt(document.getElementById('lovedones_count').innerText))));
+  }
+  lovedonesgoal_chart.update();
+}
+
+function updateStudyGoals(){
+  studygoal_chart.data.datasets[0].data = []
+  studygoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('study_count').innerText));
+
+  if (parseInt(document.getElementById("study_goal").value) == 0){
+    studygoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("study_goal").value));
+  } else if ((parseInt(document.getElementById("study_goal").value) < (parseInt(document.getElementById('study_count').innerText)))) {
+    studygoal_chart.data.datasets[0].data.push(0);
+  } else {
+    studygoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("study_goal").value) - (parseInt(document.getElementById('study_count').innerText))));
+  }
+  studygoal_chart.update();
+}
+
+function updateReadGoals(){
+  readgoal_chart.data.datasets[0].data = []
+  readgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
+
+  if (parseInt(document.getElementById("read_goal").value) == 0){
+    readgoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("read_goal").value));
+  } else if ((parseInt(document.getElementById("read_goal").value) < (parseInt(document.getElementById('read_count').innerText)))) {
+    readgoal_chart.data.datasets[0].data.push(0);
+  } else {
+    readgoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("read_goal").value) - (parseInt(document.getElementById('read_count').innerText))));
+  }
+  readgoal_chart.update();
+}
+
+function updateLanguageGoals(){
+  languagegoal_chart.data.datasets[0].data = []
+  languagegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById('language_count').innerText));
+
+  if (parseInt(document.getElementById("language_goal").value) == 0){
+    languagegoal_chart.data.datasets[0].data.push(parseInt(document.getElementById("language_goal").value));
+  } else if ((parseInt(document.getElementById("language_goal").value) < (parseInt(document.getElementById('language_count').innerText)))) {
+    languagegoal_chart.data.datasets[0].data.push(0);
+  } else {
+    languagegoal_chart.data.datasets[0].data.push((parseInt(document.getElementById("language_goal").value) - (parseInt(document.getElementById('language_count').innerText))));
+  }
+  languagegoal_chart.update();
+}
+
 
 function updatecharts() {
   updatechartActivities();
   updatechartDays();
+  updateExerciseGoals();
+  updateWaterGoals();
+  updateFlossGoals();
+  updateClassGoals();
+  updateSkinCareGoals();
+  updateLovedOnesGoals();
+  updateStudyGoals();
+  updateReadGoals();
+  updateLanguageGoals();
 }
 
 </script>
