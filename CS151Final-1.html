@@ -317,13 +317,15 @@
  <!-- Reading Statistics -->
  <div class="rulessection" style="padding: 1em; margin: 1em;">
   <h2>Statistics</h2>
-
   <!-- The Statistics -->
   <table width='100%'>
     <tr>
         <td valign="top">
             <canvas id="chartactivities" style="max-width:400px"></canvas>
         </td>
+        <td valign="top">
+          <canvas id="chartdays" style="max-width:400px"></canvas>
+      </td>
     </tr>
   </table>
 </div>
@@ -397,16 +399,17 @@ innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Go
 
 <script>
   var activityColors = ["red", "red", "red", "red", "red", "red", "red", "red", "red"];
-  var xValues = ["Exercise", "Water Drank", "Flossed", "Went to Class", "Skincare Routine", "Call Loved Ones", "Study", "Read", "Practice Language"];
-  var yValues = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var xValuesActivites = ["Exercise", "Water Drank", "Flossed", "Went to Class", "Skincare Routine", "Call Loved Ones", "Study", "Read", "Practice Language"];
+  var yValuesActivites = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
   var chartactivities = new Chart("chartactivities", {
   type: "bar",
     data: {
-      labels: xValues,
+      labels: xValuesActivites,
       datasets: [{
         label: 'Number of Days Completed',
         backgroundColor: activityColors,
-        data: yValues
+        data: yValuesActivites
       }]
     },
   options: {
@@ -418,9 +421,34 @@ innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Go
          }
      }
   }
-});
+  });
 
-function updatecharts() {
+  var xValuesDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  var yValuesDays= [0, 0, 0, 0, 0, 0, 0];
+  var dayColors = ["blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue", "blue"];
+  var chartdays = new Chart("chartdays", {
+  type: "bar",
+    data: {
+      labels: xValuesDays,
+      datasets: [{
+        label: 'Number of Activites Completed',
+        backgroundColor: dayColors,
+        data: yValuesDays
+      }]
+    },
+  options: {
+     scales: {
+         y: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 9
+         }
+     }
+  }
+  });
+
+function updatechartActivities(){
+    /* chart activites updating */
   // TODO: create total activity variable
   console.log(document.getElementById('exercise_count').innerText);
   chartactivities.data.datasets[0].data = [];
@@ -434,7 +462,24 @@ function updatecharts() {
   //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
   //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('practice_language_count').innerText));
   chartactivities.update();
+}
 
+function updatechartDays(){
+  //console.log(document.getElementById('monday_count').innerText);
+  chartdays.data.datasets[0].data = [];
+  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('monday_count').innerText));
+  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('tuesday_count').innerText));
+  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('wednesday_count').innerText));
+  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('thursday_count').innerText));
+  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('friday_count').innerText));
+  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('saturday_count').innerText));
+  //chartdays.data.datasets[0].data.push(parseInt(document.getElementById('sunday_count').innerText));
+  chartdays.update();
+}
+
+function updatecharts() {
+  updatechartActivities();
+  updatechartDays();
 }
 
 </script>
