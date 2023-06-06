@@ -34,6 +34,11 @@
         border-color: white;
         padding: 0%;
       }
+      .stats-container {
+        display: flex;
+        justify-content: center;
+        text-align: left;
+      }
 
       /* .mon { background-color: #f9d7dd; } /* Pastel pink */
       /* .tue { background-color: #ffecd1; } /* Pastel red */
@@ -61,7 +66,7 @@
 </div>
 
 <div class="header">
-  <div style="font-size: 15px; text-align: left; padding-left: 22%;"><b style="color: blue">Start: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
+  <div style="font-size: 15px; text-align: left; padding-left: 25%;"><b style="color: blue">Start: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
 </div>
 <div>
 
@@ -290,165 +295,119 @@
 
  <!-- Reading Statistics -->
  <div class="rulessection" style="padding: 1em; margin: 1em;">
-  <h2>Statistics</h2>
+  <h2>Quick Stats 🔥</h2>
   <!-- The Statistics -->
   <!-- RESULTS SECTION! -->
-<div style="color: black">
-  NUMBER OF TIMES YOU EXERCISED: <span id='exercise_count' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span> </br>
-  PROGRESS: <span id='exercise_progress' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span> % </br>
-  
-  NUMBER OF TIMES YOU DRANK WATER: <span id='water_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='water_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU FLOSSED: <span id='floss_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='floss_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU WENT TO CLASS: <span id='class_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='class_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU DID SKINCARE: <span id='skincare_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='skincare_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU CALLED LOVED ONES: <span id='lovedones_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='lovedones_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU STUDIED: <span id='study_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='study_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU READ: <span id='read_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='read_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-
-  NUMBER OF TIMES YOU PRACTICED A LANGUAGE: <span id='language_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS: <span id='language_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
-</div>
-<div style="color: black">
-  Monday Activity Count: <span id='mon_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
-  Tuesday Activity Count: <span id='tue_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
-  Wednesday Activity Count: <span id='wed_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
-  Thursday Activity Count: <span id='thu_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
-  Friday Activity Count: <span id='fri_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
-  Saturday Activity Count: <span id='sat_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
-  Sunday Activity Count: <span id='sun_count' style='font-size:18px; color: purple;' onchange="handle(this); updatecharts();"> </span> </br>
-</div>
-
-<table style="margin-right: 3%;" cellspacing='0' border='1'>
-  <tr>
-      <th class="table"></th>
-      <th class="table mon">MON</th>
-      <th class="table tue">TUE</th>
-      <th class="table wed">WED</th>
-      <th class="table thu">THU</th>
-      <th class="table fri">FRI</th>
-      <th class="table sat">SAT</th>
-      <th class="table sun">SUN</th>
+<div class="stats-container" style="color: black;">
+  <div>
+  <table>
+    <tr>
+      <td><b>Exercise 🏃 </b></td>
+      <td>Total # Days: <span id='exercise_count' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span></td>
+      <td style="padding-right: 15px;"><b>Drank 64oz water🚰  </b></td>
+      <td>Total # Days: <span id='water_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
     </tr>
     <tr>
-      <th class="table">Exercised 🏃 </th>
-      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-
+      <td></td>
+      <td style="padding-right: 15px;">Progress Towards Goal : <span id='exercise_progress' style='font-size:18px; color: green;' onchange="handle(this); updatecharts();"> </span> %</td>
+      <td></td>
+      <td style="padding-right: 15px;">Progress Towards Goal : <span id='water_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
     </tr>
     <tr>
-      <th class="table">Drank 64oz water 🚰</th>
-      <td class="table mon"><input id='water_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='water_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='water_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='water_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='water_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='water_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='water_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Flossed 🦷 </th>
-      <td class="table mon"><input id='flossing_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='flossing_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='flossing_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='flossing_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='flossing_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='flossing_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='flossing_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Went to class 📚 </th>
-      <td class="table mon"><input id='class_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='class_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='class_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='class_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='class_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='class_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='class_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Skincare routine 🪞 </th>
-      <td class="table mon"><input id='skincare_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='skincare_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='skincare_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='skincare_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='skincare_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='skincare_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='skincare_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Call loved ones 💟 </th>
-      <td class="table mon"><input id='loved_ones_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='loved_ones_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='loved_ones_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='loved_ones_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='loved_ones_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='loved_ones_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='loved_ones_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-    </tr>
-
-    <tr>
-      <th class="table">Study 📗 </th>
-      <td class="table mon"><input id='study_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='study_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='study_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='study_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='study_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='study_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='study_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td><b>Flossed 🦷  </b></td>
+      <td>Total # Days: <span id='floss_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+      <td><b>Went to class 📚  </b></td>
+      <td>Total # Days:<span id='class_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
     </tr>
     <tr>
-      <th class="table">Read 📕 </th>
-      <td class="table mon"><input id='read_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='read_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='read_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='read_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='read_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='read_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='read_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td></td>
+      <td>Progress Towards Goal : <span id='floss_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+      <td></td>
+      <td>Progress Towards Goal : <span id='class_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
     </tr>
     <tr>
-      <th class="table">Practiced language 🌐 </th>
-      <td class="table mon"><input id='language_mon' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table tue"><input id='language_tue' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table wed"><input id='language_wed' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table thu"><input id='language_thu' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table fri"><input id='language_fri' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sat"><input id='language_sat' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
-      <td class="table sun"><input id='language_sun' style='width:100;' onchange="handle(this); updatecharts();" type="checkbox"></td>
+      <td><b>Skincare routine 🪞  </b></td>
+      <td>Total # Days: <span id='skincare_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+      <td><b>Call loved ones 💟  </b></td>
+      <td>Total # Days: <span id='lovedones_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
     </tr>
-
-
-    <!-- Continue with the remaining habits, making sure to provide a unique id for each checkbox -->
+    <tr>
+      <td></td>
+      <td>Progress Towards Goal : <span id='skincare_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+      <td></td>
+      <td>Progress Towards Goal : <span id='lovedones_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
+    <tr>
+      <td><b>Study 📗  </b></td>
+      <td>Total # Days: <span id='study_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+      <td><b>Read 📕 </b></td>
+      <td>Total # Days: <span id='read_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Progress Towards Goal : <span id='study_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+      <td></td>
+      <td>Progress Towards Goal : <span id='read_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
+    <tr>
+      <td style="padding-right: 15px;"><b>Practiced language 🌐	  </b></td>
+      <td>Total # Days: <span id='language_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Progress Towards Goal : <span id='language_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %</td>
+    </tr>
   </table>
+
+</div>
+<div>
+  <table style="color:grey">
+    <tr>
+      <td><b>Mon. Score: </b></td>
+      <td><b><span id='mon_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Tues. Score: </b></td>
+      <td><b><span id='tue_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Wed. Score: </b></td>
+      <td><b><span id='wed_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td style="padding-right: 10px;"><b>Thurs. Score: </b></td>
+      <td><b><span id='thu_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Fri. Score: </b></td>
+      <td><b><span id='fri_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Sat. Score: </b></td>
+      <td><b><span id='sat_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td><b>Sun. Score: </b></td>
+      <td><b><span id='sun_count' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td style="color: palevioletred"><b>Most Active Day: </b></td>
+      <td><b><span id='most_active' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+    <tr>
+      <td style="color: palevioletred"><b>Favorite Activity: </b></td>
+      <td><b><span id='fav_activity' style='font-size:18px; color: coral;' onchange="handle(this); updatecharts();"> </span> </br></b></td>
+    </tr>
+  </table>
+</div>
+</div>
 
 
 </div>
 
  <!-- Reading Statistics -->
  <div class="rulessection" style="padding: 1em; margin: 1em;">
-  <h2>Statistics</h2>
+  <h2>Activity Charts 💪</h2>
   <!-- The Statistics -->
   <table width='100%'>
     <tr>
@@ -1011,6 +970,26 @@ innerhtml(sat_count, Total) :- satcount(Total)
 
 suncount(Total) :- evaluate(countofall(X, task(sun, X)), Total)
 innerhtml(sun_count, Total) :- suncount(Total)
+
+innerhtml(most_active, "") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), 0)
+innerhtml(most_active, "Monday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), A)
+innerhtml(most_active, "Tuesday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), B)
+innerhtml(most_active, "Wednesday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), C)
+innerhtml(most_active, "Thursday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), D)
+innerhtml(most_active, "Friday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), E)
+innerhtml(most_active, "Saturday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), F)
+innerhtml(most_active, "Sunday") :- moncount(A) &  tuecount(B) & wedcount(C) & thucount(D) & fricount(E) & satcount(F) & suncount(G) & evaluate(max(A,B,C,D,E,F,G), G)
+
+innerhtml(fav_activity, "") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), 0)
+innerhtml(fav_activity, "Exercise 🏃") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), A)
+innerhtml(fav_activity, "Drink Water🚰") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), B)
+innerhtml(fav_activity, "Floss 🦷") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), C)
+innerhtml(fav_activity, "Class 📚") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), D)
+innerhtml(fav_activity, "Skincare 🪞") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), E)
+innerhtml(fav_activity, "Call loved ones 💟") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), F)
+innerhtml(fav_activity, "Study 📗	") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), G)
+innerhtml(fav_activity, "Read 📕") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), H)
+innerhtml(fav_activity, "Practiced language 🌐	") :- exercisecount(A) &  watercount(B) & flosscount(C) & classcount(D) & skincarecount(E) & lovedonescount(F) & studycount(G) & readcount(H) & languagecount(I) & evaluate(max(A,B,C,D,E,F,G, H, I), I)
 
 </textarea>
 
