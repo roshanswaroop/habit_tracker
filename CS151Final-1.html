@@ -31,9 +31,8 @@
       }
       .table {
         background-color: rgb(255, 255, 255);
-        border-width: 2px;
         border-color: white;
-        padding: 2%;
+        padding: %;
       }
 
       /* .mon { background-color: #f9d7dd; } /* Pastel pink */
@@ -60,13 +59,10 @@
   <div style="font-size: 15px;"><b>How it works: </b> Get feedback on how you did this week with meeting your daily habits! </br>
     Check habits you complete as your week progresses. </div>
 </div>
-<div>
-<div class="header">
-  <div style="font-size: 15px; text-align: left; padding-left: 22%;"><b style="color: red">Step 1: </b> Let's start by setting some goals first. Select the number of times you hope to accomplish each task, so you can track your progress!</div>
-</div>
+
 <div>
 
-  <table style="align-items: center;" cellspacing='0' border='1'>
+  <table class="table" style="align-items: center;" cellspacing='0' border='1'>
     <tr>
       <th style="padding: 10px;"></th>
       <th style="padding: 10px;">Exercise</th>
@@ -194,12 +190,14 @@
   
 <div style="color: black">
 
-  HERE ARE THE NUMBER OF TIMES YOU EXERCISED THIS WEEK: <span id='exercise_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
-  PROGRESS TOWARDS GOAL: <span id='exercise_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> %
-
+  Number of days exercising this week: <span id='exercise_count' style='font-size:18px; color: green;' onchange='handle(this)'> </span> </br>
+  Progress towards exercise goal: <span id='exercise_progress' style='font-size:18px; color: green;' onchange='handle(this)'> </span> % </br>
 </div>
 
-  <table class="table" style="align-items: center;" cellspacing='0' border='1'>
+<br>
+<br>
+
+  <table style="margin-right: 3%;" cellspacing='0' border='1'>
     <tr>
       <th class="table"></th>
       <th class="table mon">MON</th>
@@ -314,6 +312,11 @@
 
 </div>
 
+<div style="color: white">
+
+  RESULTS: <span id='results' style='font-size:18px;' onchange='handle(this)'> </span>
+
+</div>
 
 <br/>
 
@@ -327,57 +330,58 @@
   task(fri, exercise);
   task(sat, exercise);
   task(sun, exercise);
+
 </textarea>
 
 <!--=======================================================================-->
 
 <textarea id='library' type='text/hrf' style='display:none'>
 
-init(exercisecount(0))
+  init(exercisecount(0))
 
-select(exercising_mon, X) :: task(mon, exercise) ==> ~task(mon, exercise)
-select(exercising_mon, X) :: ~task(mon, exercise) ==> task(mon, exercise)
-value(exercising_mon, true) :- task(mon, exercise)
-value(exercising_mon, false) :- ~task(mon, exercise)
-
-select(exercising_tue, X) :: task(tue, exercise) ==> ~task(tue, exercise)
-select(exercising_tue, X) :: ~task(tue, exercise) ==> task(tue, exercise)
-value(exercising_tue, true) :- task(tue, exercise)
-value(exercising_tue, false) :- ~task(tue, exercise)
-
-select(exercising_wed, X) :: task(wed, exercise) ==> ~task(wed, exercise)
-select(exercising_wed, X) :: ~task(wed, exercise) ==> task(wed, exercise)
-value(exercising_wed, true) :- task(wed, exercise)
-value(exercising_wed, false) :- ~task(wed, exercise)
-
-select(exercising_thu, X) :: task(thu, exercise) ==> ~task(thu, exercise)
-select(exercising_thu, X) :: ~task(thu, exercise) ==> task(thu, exercise)
-value(exercising_thu, true) :- task(thu, exercise)
-value(exercising_thu, false) :- ~task(thu, exercise)
-
-select(exercising_fri, X) :: task(fri, exercise) ==> ~task(fri, exercise)
-select(exercising_fri, X) :: ~task(fri, exercise) ==> task(fri, exercise)
-value(exercising_fri, true) :- task(fri, exercise)
-value(exercising_fri, false) :- ~task(fri, exercise)
-
-select(exercising_sat, X) :: task(sat, exercise) ==> ~task(sat, exercise)
-select(exercising_sat, X) :: ~task(sat, exercise) ==> task(sat, exercise)
-value(exercising_sat, true) :- task(sat, exercise)
-value(exercising_sat, false) :- ~task(sat, exercise)
-
-select(exercising_sun, X) :: task(sun, exercise) ==> ~task(sun, exercise)
-select(exercising_sun, X) :: ~task(sun, exercise) ==> task(sun, exercise)
-value(exercising_sun, true) :- task(sun, exercise)
-value(exercising_sun, false) :- ~task(sun, exercise)
-
-select(exercise_goal, Goal) :: exercisegoal(Goal)
-select(exercise_goal, Goal) :: exercisegoal(Old) ==> exercisegoal(Goal) & ~exercisegoal(Old)
-value(exercise_goal, Goal) :- exercisegoal(Goal)
-value(exercise_goal, 0) :- ~exercisegoal(Goal)
-
-exercisecount(Total) :- evaluate(countofall(X, task(X, exercise)), Total)
-innerhtml(exercise_count, Total) :- exercisecount(Total)
-innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
+  select(exercising_mon, X) :: task(mon, exercise) ==> ~task(mon, exercise)
+  select(exercising_mon, X) :: ~task(mon, exercise) ==> task(mon, exercise)
+  value(exercising_mon, true) :- task(mon, exercise)
+  value(exercising_mon, false) :- ~task(mon, exercise)
+  
+  select(exercising_tue, X) :: task(tue, exercise) ==> ~task(tue, exercise)
+  select(exercising_tue, X) :: ~task(tue, exercise) ==> task(tue, exercise)
+  value(exercising_tue, true) :- task(tue, exercise)
+  value(exercising_tue, false) :- ~task(tue, exercise)
+  
+  select(exercising_wed, X) :: task(wed, exercise) ==> ~task(wed, exercise)
+  select(exercising_wed, X) :: ~task(wed, exercise) ==> task(wed, exercise)
+  value(exercising_wed, true) :- task(wed, exercise)
+  value(exercising_wed, false) :- ~task(wed, exercise)
+  
+  select(exercising_thu, X) :: task(thu, exercise) ==> ~task(thu, exercise)
+  select(exercising_thu, X) :: ~task(thu, exercise) ==> task(thu, exercise)
+  value(exercising_thu, true) :- task(thu, exercise)
+  value(exercising_thu, false) :- ~task(thu, exercise)
+  
+  select(exercising_fri, X) :: task(fri, exercise) ==> ~task(fri, exercise)
+  select(exercising_fri, X) :: ~task(fri, exercise) ==> task(fri, exercise)
+  value(exercising_fri, true) :- task(fri, exercise)
+  value(exercising_fri, false) :- ~task(fri, exercise)
+  
+  select(exercising_sat, X) :: task(sat, exercise) ==> ~task(sat, exercise)
+  select(exercising_sat, X) :: ~task(sat, exercise) ==> task(sat, exercise)
+  value(exercising_sat, true) :- task(sat, exercise)
+  value(exercising_sat, false) :- ~task(sat, exercise)
+  
+  select(exercising_sun, X) :: task(sun, exercise) ==> ~task(sun, exercise)
+  select(exercising_sun, X) :: ~task(sun, exercise) ==> task(sun, exercise)
+  value(exercising_sun, true) :- task(sun, exercise)
+  value(exercising_sun, false) :- ~task(sun, exercise)
+  
+  select(exercise_goal, Goal) :: exercisegoal(Goal)
+  select(exercise_goal, Goal) :: exercisegoal(Old) ==> exercisegoal(Goal) & ~exercisegoal(Old)
+  value(exercise_goal, Goal) :- exercisegoal(Goal)
+  value(exercise_goal, 0) :- ~exercisegoal(Goal)
+  
+  exercisecount(Total) :- evaluate(countofall(X, task(X, exercise)), Total)
+  innerhtml(exercise_count, Total) :- exercisecount(Total)
+  innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
 
 </textarea>
 
