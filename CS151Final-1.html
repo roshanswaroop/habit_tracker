@@ -212,13 +212,13 @@
     </tr>
     <tr>
       <th class="table">Exercised 🏃 </th>
-      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange='handle(this)' type="checkbox"></td>
-      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange='handle(this)' type="checkbox"></td>
+      <td class="table mon"><input id='exercising_mon' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table tue"><input id='exercising_tue' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table wed"><input id='exercising_wed' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table thu"><input id='exercising_thu' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table fri"><input id='exercising_fri' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table sat"><input id='exercising_sat' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
+      <td class="table sun"><input id='exercising_sun' style='width:100;' onchange="modselector(this); updatecharts();" type="checkbox"></td>
 
     </tr>
     <tr>
@@ -314,6 +314,20 @@
 
 </div>
 
+ <!-- Reading Statistics -->
+ <div class="rulessection" style="padding: 1em; margin: 1em;">
+  <h2>Statistics</h2>
+
+  <!-- The Statistics -->
+  <table width='100%'>
+    <tr>
+        <td valign="top">
+            <canvas id="chartactivities" style="max-width:400px"></canvas>
+        </td>
+    </tr>
+  </table>
+</div>
+
 
 <br/>
 
@@ -380,6 +394,50 @@ innerhtml(exercise_count, Total) :- exercisecount(Total)
 innerhtml(exercise_progress, Progress) :- exercisecount(Total) & exercisegoal(Goal) & evaluate(quotient(Total, Goal), Raw) & evaluate(times(Raw, 100), Digits) & evaluate(round(Digits, 2), Progress)
 
 </textarea>
+
+<script>
+  var activityColors = ["red", "red", "red", "red", "red", "red", "red", "red", "red"];
+  var xValues = ["Exercise", "Water Drank", "Flossed", "Went to Class", "Skincare Routine", "Call Loved Ones", "Study", "Read", "Practice Language"];
+  var yValues = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  var chartactivities = new Chart("chartactivities", {
+  type: "bar",
+    data: {
+      labels: xValues,
+      datasets: [{
+        label: 'Number of Days Completed',
+        backgroundColor: activityColors,
+        data: yValues
+      }]
+    },
+  options: {
+     scales: {
+         y: {
+          beginAtZero: true,
+          suggestedMin: 0,
+          suggestedMax: 7
+         }
+     }
+  }
+});
+
+function updatecharts() {
+  // TODO: create total activity variable
+  console.log(document.getElementById('exercise_count').innerText);
+  chartactivities.data.datasets[0].data = [];
+  // TODO: create all counts other than exercise_count
+  chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('exercise_count').innerText));
+  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('water_drank_count').innerText));
+  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('flossed_count').innerText));
+  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('went_to_class_count').innerText));
+  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('call_loved_ones_count').innerText));
+  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('study_count').innerText));
+  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('read_count').innerText));
+  //chartactivities.data.datasets[0].data.push(parseInt(document.getElementById('practice_language_count').innerText));
+  chartactivities.update();
+
+}
+
+</script>
 
 <!--=======================================================================-->
 
